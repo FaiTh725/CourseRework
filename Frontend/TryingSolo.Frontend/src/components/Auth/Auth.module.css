@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.header {
+    height: 100px;
+    padding: 40px;
+}
+
+.page {
+    display: block;
+    margin: auto;
+    margin-top: calc(40vh/2);
+    width: 400px;
+    height: 400px;
+}
+
+.active {
+    height: 100%;
+    flex: 4;
+}
+
+.noActive {
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    border-radius: 20px;
+}
+
+@media all and (max-width: 1000px) {
+    .noActive {
+        display: none;
+    }
+    }
+
+.form {
+    font-size: 20px;
+}
+
+.form h2 {
+    margin-bottom: 20px;
+}
+
+.inputData {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputData label {
+    font-size: 14px;
+    color: #A1A5B0;
+    margin-bottom: 5px;
+}
+
+.inputData input {
+    border-radius: 4px;
+    border: 1px solid #A1A5B0;
+    padding: 5px;
+}
+
+.inputData input:focus {
+    border: 1px solid #000;
+}
+
+.btn {
+    width: 100%;
+    color: #fff;
+    background-color: #209e50d7;
+    border-radius: 4px;
+    font-size: 18px;
+    padding: 4px 8px;
+}
+
+.btn:hover {
+    background-color: #209e50;
+} 
+
+.btn + .btn {
+    margin-left: 20px;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.btnBack {
+    width: 80px;
+    margin-bottom: 5px;
+}

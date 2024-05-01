@@ -1,0 +1,129 @@
+
+.container {
+    padding: 20px 80px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+
+#error {
+    font-size: 30px;
+    color: #e42b2b;
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerText {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 40px;
+} 
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.btnSearch {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+}
+
+.btnSearch svg {
+    fill: rgba(173, 175, 177, 0.856);
+}
+
+
+.searchInner {
+    padding: 7px 12px;
+    background-color: #e7e7e75e;
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+    color: #b6b4b49a;
+}
+
+.searchInner input {
+    font-size: 22px;
+    padding: 10px;
+    color: rgb(198, 202, 204);
+    background-color: transparent;
+}
+
+.roles {
+    height: 70vh;
+    border-radius: 14px;
+    margin-top: 60px;
+    box-shadow: 0px -10px 5px #fff;
+    position: relative;
+    background-color: transparent;
+    z-index: 2;
+    overflow: scroll;
+    padding: 30px;
+}
+
+.userVisual {
+    background-color: #209e50;
+    display: inline-block;
+    padding: 22px 36px;
+    border-radius: 8px;
+    margin-right: 40px;
+    margin-bottom: 30px;
+    transition: all .3s;
+}
+
+.userVisual:hover {
+    transform: translate(0, -20px);
+}
+
+.info {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.selector {
+    font-size: 18px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: all .4s;
+}
+
+.selector:hover {
+    border: 1px solid #1edf68;
+    box-shadow: 0px 0px 7px #fff;
+}
+
+.selector option {
+    color: #4242427a;
+    transition: .3s;
+}
+
+.selector option:hover {
+    color: #817d7d5e;
+    background-color: #e7e7e75e;
+}
+
+.rolesVisual:before {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    top: -30px; /* Смещение вверх */
+    left: 0;
+    width: 100%;
+    height: 70vh; /* Высота визуального эффекта */
+    background: #209e50; /* Цвет визуального эффекта */
+    box-shadow: 0px 10px 5px #fff; /* Тень визуального эффекта */
+    border-radius: 14px 14px; /* Бордер-радиус для верхних углов */
+}
