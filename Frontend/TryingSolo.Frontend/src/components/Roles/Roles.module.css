@@ -25,40 +25,6 @@
     margin-top: 40px;
 } 
 
-.search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-}
-
-.btnSearch {
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-}
-
-.btnSearch svg {
-    fill: rgba(173, 175, 177, 0.856);
-}
-
-
-.searchInner {
-    padding: 7px 12px;
-    background-color: #e7e7e75e;
-    display: flex;
-    border-radius: 8px;
-    align-items: center;
-    color: #b6b4b49a;
-}
-
-.searchInner input {
-    font-size: 22px;
-    padding: 10px;
-    color: rgb(198, 202, 204);
-    background-color: transparent;
-}
-
 .roles {
     height: 70vh;
     border-radius: 14px;
@@ -79,6 +45,10 @@
     margin-right: 40px;
     margin-bottom: 30px;
     transition: all .3s;
+}
+
+.userVisual div {
+    text-align: center;
 }
 
 .userVisual:hover {
@@ -115,15 +85,3 @@
     background-color: #e7e7e75e;
 }
 
-.rolesVisual:before {
-    content: "";
-    z-index: -2;
-    position: absolute;
-    top: -30px; /* Смещение вверх */
-    left: 0;
-    width: 100%;
-    height: 70vh; /* Высота визуального эффекта */
-    background: #209e50; /* Цвет визуального эффекта */
-    box-shadow: 0px 10px 5px #fff; /* Тень визуального эффекта */
-    border-radius: 14px 14px; /* Бордер-радиус для верхних углов */
-}

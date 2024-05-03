@@ -8,6 +8,10 @@ import { AuthProvider } from './components/Context/AuthProvider'
 import { useCookies } from 'react-cookie'
 import api from './api/helpAxios'
 import Roles from './components/Roles/Roles'
+import RoleInvalid from './components/PageError/RoleInvalid'
+import NotFoundPage from './components/PageError/NotFoundPage'
+import RoleProtectedRoute from './components/Context/RoleProtectedRote'
+import Files from './components/Files/Files'
 
 function App() {
 
@@ -16,9 +20,15 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route exact path='/Auth' element={<Auth/>}/>
+          <Route exact path='*' element={<NotFoundPage/>}/>
+          <Route exact path='/RoleError' element={<RoleInvalid />} />
+          <Route exact path='/Files' element={<Files/>}/>
           <Route element={<ProtectedRoute/>}>
             <Route exact path='/Home' element={<Home/>}/>
-            <Route exact path='/Roles' element={<Roles/>}/>
+            <Route element={<RoleProtectedRoute role={["Admin"]}/>}>
+              <Route exact path='/Roles' element={<Roles/>}/>
+            </Route>
+            
           </Route>
         </Routes>
       </AuthProvider>

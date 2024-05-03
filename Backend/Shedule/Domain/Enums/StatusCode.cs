@@ -12,6 +12,11 @@
         NotFoundUser,
         NotEnoughRight,
 
-        InvalidData
+        InvalidData,
+
+        ExcelFileExist,
+        NotFoundExcelFile
+        
+
     }
 }

@@ -12,5 +12,7 @@ namespace Shedule.Dal
         }
 
         public DbSet<UserEntity> Users { get; set; }
+
+        public DbSet<ExcelFileEntity> ExcelFiles { get; set; }
     }
 }

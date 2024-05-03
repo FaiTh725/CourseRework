@@ -15,10 +15,6 @@ const Login = ({SwithPage}) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log(12)
-    }, []);
-
-    useEffect(() => {
         var error = document.getElementById("error");
         error.textContent = "";
     }, [loginInput, password]);

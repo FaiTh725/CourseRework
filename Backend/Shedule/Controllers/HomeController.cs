@@ -20,13 +20,6 @@ namespace Shedule.Controllers
 
         [HttpGet("[action]")]
         [Authorize]
-        public IActionResult Index()
-        {
-            return Ok("Успешно вошли ");
-        }
-
-        [HttpGet("[action]")]
-        [Authorize]
         public async Task<IActionResult> GetAllUsers([FromQuery]HomeBaseRequest request)
         {
             var response = await homeService.GetAllUsers(request);

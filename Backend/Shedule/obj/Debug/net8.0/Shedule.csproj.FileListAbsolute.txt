@@ -133,3 +133,5 @@ C:\VSProjects\React\TryingSolo1\Backend\Shedule\obj\Debug\net8.0\refint\Shedule.
 C:\VSProjects\React\TryingSolo1\Backend\Shedule\obj\Debug\net8.0\Shedule.pdb
 C:\VSProjects\React\TryingSolo1\Backend\Shedule\obj\Debug\net8.0\Shedule.genruntimeconfig.cache
 C:\VSProjects\React\TryingSolo1\Backend\Shedule\obj\Debug\net8.0\ref\Shedule.dll
+C:\VSProjects\React\TryingSolo1\Backend\Shedule\obj\Debug\net8.0\Shedule.sourcelink.json
+C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\Shedule.staticwebassets.runtime.json

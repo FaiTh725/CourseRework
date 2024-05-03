@@ -20,8 +20,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IExcelFileRepository, ExcelFilerepository>();
 builder.Services.AddScoped<IJwtProvider, JwtProvider>();
 builder.Services.AddScoped<IHomeService, HomeService>();
+builder.Services.AddScoped<IFileService, FileService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
@@ -66,6 +68,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 
 app.UseAuthentication();
 app.UseAuthorization();

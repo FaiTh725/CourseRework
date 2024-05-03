@@ -1,34 +1,27 @@
-import { Outlet, Navigate, useNavigate } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
+import { Outlet, Navigate, useNavigate, useLocation } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import AuthContext from "./AuthProvider";
 import Loading from "../Loading/Loading";
-import api from "../../api/helpAxios";
-import Cookies from "js-cookie";
+import useParseToken from "../../hooks/useParseToken";
 
 const ProtectedRoute = () => {
     const {auth, setAuth} = useContext(AuthContext);
     const [load, setLoad] = useState(true);
+    const location = useLocation();
 
     useEffect(() => {
         var token = localStorage.getItem('token');
         if (!token) {
-            return;
+
+            return <Navigate to="/Auth" state={{from: location}}/>;
         }
-        var tokenInfo = jwtDecode(token);
-        const login = tokenInfo.name;
-        const id = tokenInfo.sub;
-        const role = tokenInfo.Role;
+        const {id, login, role} = useParseToken(token);
         console.log(login);
         setAuth({ id, login, role });
         setLoad(false);
     }, []);
     
-    // useEffect(() => {
-    //     setLoad(false);
-    // }, [auth]);
-
     if(load == true)
     {
         return (
@@ -37,7 +30,7 @@ const ProtectedRoute = () => {
     }
 
     return (
-        auth?.login ? <Outlet/> : <Navigate to='/Auth' replace/>
+        auth?.login ? <Outlet/> : <Navigate to='/Auth' state={{from: location}}/>
     )
 }
 

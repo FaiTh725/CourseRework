@@ -1,0 +1,33 @@
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.btnSearch {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+}
+
+.btnSearch svg {
+    fill: rgba(173, 175, 177, 0.856);
+}
+
+
+.searchInner {
+    padding: 7px 12px;
+    background-color: #e7e7e75e;
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+    color: #b6b4b49a;
+}
+
+.searchInner input {
+    font-size: 22px;
+    padding: 10px;
+    color: rgb(198, 202, 204);
+    background-color: transparent;
+}

@@ -1,0 +1,165 @@
+.container {
+    padding: 20px 80px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.headerText {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.main {
+    display: flex;
+    margin-top: 50px;
+    max-height: 70vh;
+}
+
+.filesContainer {
+    overflow: visible;
+    width: 60%;
+}
+
+
+.file {
+    display: flex;
+    align-items: center;
+    transition: all .3s;
+    flex: 4;
+    margin-top: 20px;
+}
+
+.file:hover {
+    transform: translate(-8px, -20px);
+    box-shadow: 8px 10px 5px #aaa7a7;
+    border-radius: 14px;
+}
+
+.flagContainer {
+    margin-right: 50px;
+}
+
+.wrapperFlag {
+    display: flex;
+    align-items: center;
+    border-radius: 14px;
+    border: 2px solid transparent;
+    background-color: #dad4d4b4;
+    padding: 14px 6px;
+    transition: all .5s;
+}
+
+.wrapperFlag:hover {
+    border: 2px solid #209e5069;
+    box-shadow: 0px 0px 5px #36c06b69;
+}
+
+.info {
+    margin-left: 40px;
+    width: 100%;
+    height: 100%;
+    padding: 10px 0 0 30px;
+}
+
+.info h2{
+    font-size: 22px;
+}
+
+.info input {
+    margin-top: 6px;
+    font-size: 16px;
+    width: 100%;
+    text-wrap: nowrap;
+    color: rgb(202, 203, 204);
+}
+
+.functions {
+    padding: 25px;
+    width: 25%;
+}
+
+.addFile {
+    display: flex;
+}
+
+.addFile input {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.addFile button {
+    margin-left: 15px;
+}
+
+.btn {
+    padding: 8px 14px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #209e50c7;
+    color: #f7f4f4f1;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: inherit;
+    border: 2px solid transparent;
+    transition: .5s;
+}
+
+.btn:hover {
+    background-color: #209E50;
+    color: #fff;
+    border: 2px solid #68e99ace
+}
+
+.btnContainer {
+    margin-top: 25px;
+}
+
+.btnContainer button{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewInput {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 120px;
+    align-items: center;
+}
+
+.error {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: 700;
+    color: #e05252;
+}
+
+.deleteContainer {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.deleteContainer button {
+    padding: 15px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: all .5s;
+}
+
+.deleteContainer button:hover {
+    border-radius: 14px;
+    border: 1px solid #209E50;
+    box-shadow: 0xp 0px 3px #209e50be;
+}
+
+
