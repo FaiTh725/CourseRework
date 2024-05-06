@@ -8,5 +8,7 @@ namespace Shedule.Services.Interfaces
         (string token, string refreshToken) GenerateTocken(UserEntity model);
 
         public ClaimsPrincipal GetPrincipalFromExpiredToken(string token);
+
+        public string GenerateTokenResetPassword(string email);
     }
 }

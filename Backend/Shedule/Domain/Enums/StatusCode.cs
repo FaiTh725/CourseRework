@@ -10,9 +10,11 @@
 
         InvalidToken,
         NotFoundUser,
+        NotFountProfile,
         NotEnoughRight,
 
         InvalidData,
+        InvalidEmail,
 
         ExcelFileExist,
         NotFoundExcelFile

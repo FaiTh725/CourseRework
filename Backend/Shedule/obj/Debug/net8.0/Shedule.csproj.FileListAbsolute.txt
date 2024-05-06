@@ -135,3 +135,6 @@ C:\VSProjects\React\TryingSolo1\Backend\Shedule\obj\Debug\net8.0\Shedule.genrunt
 C:\VSProjects\React\TryingSolo1\Backend\Shedule\obj\Debug\net8.0\ref\Shedule.dll
 C:\VSProjects\React\TryingSolo1\Backend\Shedule\obj\Debug\net8.0\Shedule.sourcelink.json
 C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\Shedule.staticwebassets.runtime.json
+C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\MailKit.dll
+C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\MimeKit.dll

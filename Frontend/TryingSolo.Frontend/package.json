@@ -14,9 +14,11 @@
     "js-cookie": "^3.0.5",
     "jwt-decode": "^4.0.0",
     "jwt-decoder": "^0.0.0",
+    "query-string": "^9.0.0",
     "react": "^18.2.0",
     "react-cookie": "^7.1.4",
     "react-dom": "^18.2.0",
+    "react-input-mask": "^2.0.4",
     "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^6.23.0"
   },

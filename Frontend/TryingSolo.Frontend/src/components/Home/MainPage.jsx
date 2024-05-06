@@ -9,7 +9,11 @@ import miniProfile from "../../assets/Auth/user.png"
 import { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-
+// добавить функцию выбрать избранымм
+// при вводе пароля скрывать его и раскрывать
+// сделать само расписание
+// функции которые я выбрал лежат в mistral ai 
+// получать от пользователя его аватарку и устанавливать
 const Home = () => {
     const {auth, setAuth} = useContext(AuthContext);
     var c = Cookies.get("RefreshToken");

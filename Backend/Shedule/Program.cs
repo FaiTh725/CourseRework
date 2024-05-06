@@ -21,9 +21,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IExcelFileRepository, ExcelFilerepository>();
+builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 builder.Services.AddScoped<IJwtProvider, JwtProvider>();
 builder.Services.AddScoped<IHomeService, HomeService>();
 builder.Services.AddScoped<IFileService, FileService>();
+builder.Services.AddScoped<IProfileService, ProfileService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {

@@ -32,13 +32,7 @@ const Roles = () => {
                 }
             });
 
-            if (response.data.statusCode == 4) // если токен истек
-            {
-                localStorage.removeItem("token");
-                setAuth({});
-                navigate("/Auth");
-            }
-            else if (response.data.statusCode != 0) {
+            if (response.data.statusCode != 0) {
                 var error = document.getElementById("error");
                 error.textContent = response.data.description;
                 return;

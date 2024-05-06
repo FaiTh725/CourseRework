@@ -20,6 +20,7 @@ const Login = ({SwithPage}) => {
     }, [loginInput, password]);
 
     const sendRequest = async () => {
+        setAuth({});
         try
         {
             var response = await api.post('/Account/Login', {
@@ -35,17 +36,14 @@ const Login = ({SwithPage}) => {
         {
             var error = document.getElementById("error");
             error.textContent = response.data.description;
+            setAuth({});
             return;
         }
         localStorage.setItem(`token`, response.data.data.token);
         const token = response.data.data.token;
         const {id, login, role} = useParseToken(token);
-        // const infoToken = jwtDecode(token);
-        // const role = infoToken.Role;
-        // const login = infoToken.name;
-        // const id = infoToken.sub;
-        //console.log(Cookies.get("RefreshToken"));
         setAuth({id, login, role});
+        navigate('/Home');
         }
         catch {
             console.log(error);
@@ -57,8 +55,6 @@ const Login = ({SwithPage}) => {
         try
         {
             await sendRequest();
-            navigate('/Home');
-            
         }
         catch(error) {
             console.log(error);

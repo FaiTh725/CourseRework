@@ -69,7 +69,7 @@ namespace Shedule.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> Refresh(/*[FromQuery]string refreshToken*/)
+        public async Task<IActionResult> Refresh()
         {
             var response = await accountService.RefreshToken(Request.Cookies["RefreshToken"]);
 

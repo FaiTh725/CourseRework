@@ -16,5 +16,14 @@ namespace Shedule.Domain.Entities
 
         public DateTime RefreshTokenTime { get; set; }
 
+        public int ProfileId { get; set; }
+
+        public ProfileEntity Profile { get; set; } = new ProfileEntity();   
+/*
+        public UserEntity()
+        {
+            Profile.User = this;
+        }*/
+
     }
 }

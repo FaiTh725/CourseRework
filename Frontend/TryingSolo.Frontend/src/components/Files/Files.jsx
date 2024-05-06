@@ -11,7 +11,6 @@ import useParseToken from "../../hooks/useParseToken";
 import useUpdateToken from "../../hooks/useUpdateToken"
 import AuthContext from "../Context/AuthProvider";
 
-// добавить функцию выбрать избрнымм
 const Files = () => {
     const filePicker = useRef(null);
     const errorMessage = useRef(null);
@@ -288,7 +287,6 @@ const Files = () => {
     )
 }
 
-// выбрать файл избраннмы добавить
 const File = ({ id, img, name, description, DeleteFile, ChangeDescription }) => {
     const [descriptionInner, setDescriptionInner] = useState(description);
 

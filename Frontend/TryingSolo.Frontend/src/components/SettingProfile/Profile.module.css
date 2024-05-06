@@ -1,0 +1,217 @@
+.container {
+    border-radius: 8px;
+    padding: 35px 0px;
+    border: 2px solid #209e5069;
+}
+
+.main {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    padding: 20px 50px;
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #757373da;
+}
+
+.tabsBtn {
+    background-color: transparent;
+    border-bottom: 3px solid transparent;
+    font-size: 22px;
+    color: #757373da;
+
+}
+
+.checked {
+    color:  #209e50;
+    border-bottom: 3px solid #209e50;
+}
+
+.viewTab {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.personalDataContainer {
+    padding: 10px;
+    border: 1px solid #757373da;
+    border-radius: 8px;
+}
+
+.general {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.inputElem {
+    margin-top: 10px;
+}
+
+.inputElem label{
+    font-weight: 700;
+    color: #757373da;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.imgContainer {
+    border: 1px solid #757373da;
+    border-right: 0px;
+    padding: 5px;
+    background-color: #c0bdbdda;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    text-wrap: nowrap;
+}
+
+.dataInput{
+    border: 1px solid #757373da;
+    padding: 8.5px;
+    font-size: 20px;
+    font-size: 18px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 280px;
+}
+
+.dataInput:focus {
+    border: 1px solid #209e50;
+    box-shadow: 0px 0px 5px #20ee6f;
+}
+
+.about {
+    margin-top: 30px;
+    display: flex;
+}
+
+.about div p {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.about div img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
+
+.inputElem {
+    margin-left: 40px;
+}
+
+.btn {
+    padding: 8px 14px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #209e50c7;
+    color: #f7f4f4f1;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: inherit;
+    border: 2px solid transparent;
+    transition: .5s;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.btn:hover {
+    background-color: #209E50;
+    color: #fff;
+    border: 2px solid #68e99ace
+}
+
+.saveChanging {
+    margin-top: 30px;
+    display: flex;
+    align-items: end;
+}
+
+.resetPassword {
+    display: flex;
+
+}
+
+.resetPasswordForm {
+    border-radius: 8px;
+    border: 1px solid #757373da;
+    padding: 30px;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+.resetPasswordData {
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.fileInput {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.notificationData {
+    color: #757373da;
+    margin-right: 20px;
+    padding: 10px 20px;
+    border-radius: 14px;
+    border: 1px solid #757373da;
+}
+
+.notificationMain {
+    display: flex;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+}
+
+.notificationInput {
+    display: flex;
+}
+
+.btnNotification{
+    border-radius: 14px;
+    width: 50px;
+    border: 1.5px solid #29bd61;
+    box-shadow: 0px 0px 5px #32db73;
+    background-color: transparent;
+    padding: 1px 0px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+.buttonChecked {
+    border: 1px solid #209E50;
+    border-radius: 14px;
+    width: 50px;
+    background-color: #2abe63;
+    padding: 1px 0px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    margin-left: 5px;
+}
+

@@ -43,6 +43,42 @@ namespace Shedule.Migrations
                     b.ToTable("ExcelFiles");
                 });
 
+            modelBuilder.Entity("Shedule.Domain.Entities.ProfileEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("About")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("BirthDay")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
+                    b.Property<byte[]>("LogoImage")
+                        .HasColumnType("BLOB");
+
+                    b.Property<bool>("NotificationEmail")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("Profiles");
+                });
+
             modelBuilder.Entity("Shedule.Domain.Entities.UserEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -57,6 +93,9 @@ namespace Shedule.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("RefreshToken")
                         .HasColumnType("TEXT");
 
@@ -69,6 +108,23 @@ namespace Shedule.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Shedule.Domain.Entities.ProfileEntity", b =>
+                {
+                    b.HasOne("Shedule.Domain.Entities.UserEntity", "User")
+                        .WithOne("Profile")
+                        .HasForeignKey("Shedule.Domain.Entities.ProfileEntity", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Shedule.Domain.Entities.UserEntity", b =>
+                {
+                    b.Navigation("Profile")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

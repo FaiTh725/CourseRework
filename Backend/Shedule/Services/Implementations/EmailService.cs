@@ -1,0 +1,42 @@
+﻿using MailKit.Net.Smtp;
+using MimeKit;
+using Shedule.Models.Email;
+using Shedule.Services.Interfaces;
+using static System.Net.WebRequestMethods;
+
+namespace Shedule.Services.Implementations
+{
+    public class EmailService : IEmailService
+    {
+        private readonly IConfiguration configuration;
+
+        public EmailService(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
+
+        public async Task SendEmail(string email, string subject, string message)
+        {
+            var emailAuth = configuration.GetSection("EmailAuthentification").Get<EmailAuth>();
+
+            MimeMessage msg = new MimeMessage();
+
+            msg.From.Add(new MailboxAddress("Проверка отправителя", "courseproject2024@mail.ru"));
+            msg.To.Add(new MailboxAddress("it me", email));
+            msg.Subject = subject;
+
+            var bodyBuilder = new BodyBuilder();
+            bodyBuilder.HtmlBody = $@"<a href='http://localhost:5173/ResetPassword?token={message}'>ссылка<a/>";
+
+            msg.Body = bodyBuilder.ToMessageBody();
+
+            using (var client = new SmtpClient())
+            {
+                client.Connect("smtp.mail.ru", 465);
+                client.Authenticate(emailAuth.Login, emailAuth.Password);
+                client.Send(msg);
+                client.Disconnect(true);
+            }
+        }
+    }
+}

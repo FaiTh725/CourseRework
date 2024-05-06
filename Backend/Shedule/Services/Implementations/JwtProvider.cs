@@ -38,7 +38,7 @@ namespace Shedule.Services.Implementations
                 jwtConfiguration.Audience,
                 claims,
                 null,
-                DateTime.UtcNow.AddMicroseconds(5),
+                DateTime.UtcNow.AddSeconds(30),
                 key
                 );
 
@@ -87,6 +87,31 @@ namespace Shedule.Services.Implementations
             }*/
 
             return principal;
+        }
+
+        public string GenerateTokenResetPassword(string email)
+        {
+            var claims = new Claim[]
+            {
+                new Claim(JwtRegisteredClaimNames.Name, email),
+            };
+
+            var jwtConfiguration = configuration.GetSection("JwtConfig").Get<JwtOptions>();
+
+            var key = new SigningCredentials(
+                new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfiguration.SecretKey)),
+                SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(
+                jwtConfiguration.Issuerr,
+                jwtConfiguration.Audience,
+                claims,
+                null,
+                DateTime.UtcNow.AddHours(3),
+                key
+                );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }
