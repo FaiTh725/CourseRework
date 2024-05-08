@@ -230,11 +230,22 @@ namespace Shedule.Services.Implementations
                     };
                 }
 
+                DateTime? validBurthDay = null;
+
+                try
+                {
+                    validBurthDay = DateTime.Parse(request?.BirthDay);
+                }
+                catch
+                {
+
+                }
+
                 var newProfile = await profileRepository.Update(profile.Id, new Domain.Entities.ProfileEntity
                 {
                     About = request?.About,
                     Email = request?.Email,
-                    BirthDay = DateTime.Parse(request?.BirthDay),
+                    BirthDay = validBurthDay,
                     UserName = request?.FullName
                 });
 

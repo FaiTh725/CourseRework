@@ -38,6 +38,7 @@ const Register= ({SwithPage}) => {
         const token = response.data.data.token;
         const {id, login, role} = useParseToken(token);
         setAuth({id, login, role});
+        navigate('/Home');
         }
         catch(error) {
             console.log(error);
@@ -74,7 +75,6 @@ const Register= ({SwithPage}) => {
             }
             
             await sendRequest();
-            navigate('/Home');
             
         }
         catch(error) {

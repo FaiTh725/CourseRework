@@ -1,5 +1,7 @@
-﻿using Shedule.Dal.Interfaces;
+﻿using Microsoft.AspNetCore.SignalR;
+using Shedule.Dal.Interfaces;
 using Shedule.Domain.Response;
+using Shedule.Hubs;
 using Shedule.Models.File;
 using Shedule.Services.Interfaces;
 
@@ -8,10 +10,19 @@ namespace Shedule.Services.Implementations
     public class FileService : IFileService
     {
         private readonly IExcelFileRepository excelFileRepository;
+        private readonly IHubContext<ReciveEmailHub> hubContext;
+        private readonly IProfileRepository profileRepository;
+        private readonly IEmailService emailService;
 
-        public FileService(IExcelFileRepository excelFileRepository)
+        public FileService(IExcelFileRepository excelFileRepository, 
+                IHubContext<ReciveEmailHub> hubContext, 
+                IProfileRepository profileRepository,
+                IEmailService emailService)
         {
             this.excelFileRepository = excelFileRepository; 
+            this.hubContext = hubContext;
+            this.profileRepository = profileRepository;
+            this.emailService = emailService;
         }
 
         public async Task<BaseResponse<AddFileResponse>> AddFile(IFormFile file)
@@ -29,6 +40,9 @@ namespace Shedule.Services.Implementations
                 }
 
                 var createExcelFile = await excelFileRepository.AddFile(file);
+
+                //await hubContext.Clients.Group("FileUploadOrDelete").SendAsync("ReceiveSheduleChanging", "Расписание обновилось");
+                await hubContext.Clients.All.SendAsync("ReceiveSheduleChanging", "Расписание обновилось");
 
                 return new BaseResponse<AddFileResponse>
                 {
@@ -98,7 +112,7 @@ namespace Shedule.Services.Implementations
             }
         }
 
-        public async Task<BaseResponse<object>> DeleteFile(DeleteFileRequest request)
+        public async Task<DataResponse> DeleteFile(DeleteFileRequest request)
         {
             try
             {   
@@ -106,30 +120,30 @@ namespace Shedule.Services.Implementations
 
                 if(file == null)
                 {
-                    return new BaseResponse<object>
+                    return new DataResponse
                     {
                         StatusCode = Domain.Enums.StatusCode.NotFoundExcelFile,
-                        Description = "Не нашли файли по id",
-                        Data = null
+                        Description = "Не нашли файли по id"
                     };
                 }
 
                 await excelFileRepository.DeleteExcelFile(file);
-
-                return new BaseResponse<object>
+                
+                //await hubContext.Clients.Group("FileUploadOrDelete").SendAsync("ReceiveSheduleChanging", "Расписание обновилось");
+                await hubContext.Clients.All.SendAsync("ReceiveSheduleChanging", "Расписание обновилось");
+                
+                return new DataResponse
                 {
                     StatusCode = Domain.Enums.StatusCode.Ok,
-                    Description = "Удалили файл",
-                    Data = null
+                    Description = "Удалили файл"
                 };
             }
             catch
             {
-                return new BaseResponse<object>
+                return new DataResponse
                 {
                     StatusCode = Domain.Enums.StatusCode.ServerError,
-                    Description = "Ошибка сервера",
-                    Data = null
+                    Description = "Ошибка сервера"
                 };
             }
         }
@@ -160,6 +174,45 @@ namespace Shedule.Services.Implementations
                     Description = "Ошибка сервера",
                     StatusCode = Domain.Enums.StatusCode.ServerError,
                     Data = new List<AddFileResponse>()
+                };
+            }
+        }
+
+        public async Task<DataResponse> SendEmailAboutChanging()
+        {
+            try
+            {
+                var profiles = await profileRepository.GetSubscribeleProfile();
+
+                if(profiles == null)
+                {
+                    return new DataResponse
+                    {
+                        StatusCode = Domain.Enums.StatusCode.InvalidData,
+                        Description = "Нету кому отсласть"
+                    };
+                }
+
+                if(profiles.Count() > 0)
+                {
+                    foreach(var profile in profiles)
+                    {
+                        emailService.NotificationAboutChangingSheduleFiles(profile.Email);
+                    }
+                }
+
+                return new DataResponse
+                {
+                    StatusCode = Domain.Enums.StatusCode.Ok,
+                    Description = "Письма отправлены"
+                };
+            }
+            catch
+            {
+                return new DataResponse
+                {
+                    StatusCode = Domain.Enums.StatusCode.ServerError,
+                    Description = "Ошибка сервера"
                 };
             }
         }

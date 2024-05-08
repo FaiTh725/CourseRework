@@ -11,6 +11,8 @@ namespace Shedule.Dal.Interfaces
         Task<ProfileEntity> GetPorofileByEmail(string email);
 
         Task<ProfileEntity> Update(int userId, ProfileEntity profile);
+
+        Task<IEnumerable<ProfileEntity>> GetSubscribeleProfile();
     
     }
 }

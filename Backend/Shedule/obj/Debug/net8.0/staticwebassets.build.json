@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "W8WWvuRtRYGGWXYM+zy5ijwhXcfsvCLkq8nkt+kmIyk=",
+  "Hash": "lVxc8GhEuXOZ6IC2P7Klt798oliBaqNdSyfr/f1Fzqg=",
   "Source": "Shedule",
   "BasePath": "_content/Shedule",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\wwwroot\\files\\Расписание ФИТР.xlsx",
+      "SourceId": "Shedule",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\wwwroot\\",
+      "BasePath": "_content/Shedule",
+      "RelativePath": "files/Расписание ФИТР.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\Расписание ФИТР.xlsx"
+    },
     {
       "Identity": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\wwwroot\\images\\user.png",
       "SourceId": "Shedule",

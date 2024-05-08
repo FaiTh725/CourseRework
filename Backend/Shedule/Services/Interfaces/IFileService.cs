@@ -10,8 +10,10 @@ namespace Shedule.Services.Interfaces
 
         Task<BaseResponse<IEnumerable<AddFileResponse>>> GetAllFiles();
 
-        Task<BaseResponse<object>> DeleteFile(DeleteFileRequest request);
+        Task<DataResponse> DeleteFile(DeleteFileRequest request);
 
         Task<BaseResponse<AddFileResponse>> ChangeDescriptionExcelFile(UpdateFileRequest request);
+
+        Task<DataResponse> SendEmailAboutChanging();
     }
 }

@@ -7,14 +7,13 @@ import AuthContext from "../Context/AuthProvider";
 import useUpdateToken from "../../hooks/useUpdateToken";
 import useParseToken from "../../hooks/useParseToken";
 import Search from "../Search/Search";
+import useRediresctionRefreshToken from "../../hooks/useRedirectionRefreshToken";
 
-// обратно переделать работу токенов инвалидтокен не должн овзращаться в первом запросе а должно во 2 когда будет переадресация
 const Roles = () => {
     const [users, setUsers] = useState([]);
     const [usersVisual, setUsersVisual] = useState([]);
     const navigate = useNavigate();
     const { auth, setAuth } = useContext(AuthContext);
-
 
     const GetAllUser = async () => {
         try {
@@ -44,23 +43,12 @@ const Roles = () => {
         }
         catch (error) {
             if (error.request.status == 0) {
-                console.log("Переадрисация на получение токена");
 
-                const { tokenSmall, tokenBig } = await useUpdateToken();
-
-                console.log(`${tokenSmall} - ${tokenBig}`);
-
-                if (tokenSmall == null || tokenBig == null) {
-                    localStorage.removeItem("token");
-                    setAuth({});
-                    navigate("/Auth");
-                }
-                const { id, login, role } = useParseToken(tokenSmall);
-
-                localStorage.setItem("token", tokenSmall);
-                setAuth({ id, login, role });
-
-                await GetAllUser();
+                await useRediresctionRefreshToken(() => { GetAllUser() },
+                    setAuth,
+                    navigate,
+                    useUpdateToken,
+                    useParseToken);
 
             }
 
@@ -90,13 +78,7 @@ const Roles = () => {
                 }
             });
 
-            if (response.data.statusCode == 4) // если токен истек
-            {
-                localStorage.removeItem("token");
-                setAuth({});
-                navigate("/Auth");
-            }
-            else if (response.data.statusCode != 0) {
+            if (response.data.statusCode != 0) {
                 var error = document.getElementById("error");
                 error.textContent = response.data.description;
                 return;
@@ -105,24 +87,13 @@ const Roles = () => {
             console.log(response);
         }
         catch (error) {
-            if (error.request.status == 401) {
-                console.log("Переадрисация на получение токена");
+            if (error.request.status == 0) {
 
-                const { tokenSmall, tokenBig } = await useUpdateToken();
-
-                console.log(`${tokenSmall} - ${tokenBig}`);
-
-                if (tokenSmall == null || tokenBig == null) {
-                    localStorage.removeItem("token");
-                    setAuth({});
-                    navigate("/Auth");
-                }
-                const { id, login, role } = useParseToken(tokenSmall);
-
-                localStorage.setItem("token", tokenSmall);
-                setAuth({ id, login, role });
-
-                ChangeUserRoleHandler(id, newRole);
+                await useRediresctionRefreshToken(() => { ChangeUserRoleHandler(id, newRole) },
+                    setAuth,
+                    navigate,
+                    useUpdateToken,
+                    useParseToken);
             }
         }
 

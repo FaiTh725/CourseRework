@@ -8,12 +8,14 @@ import useRediresctionRefreshToken from "../../hooks/useRedirectionRefreshToken"
 import styles from "./Profile.module.css"
 import resetPassword from "../../assets/Profile/ResetPasword.jpg";
 import Loading from "../Loading/Loading";
+import Modal from "../ModalComponent/Modal";
 
 const ResetPassword = () => {
     const errorMessgae = useRef(null);
     const { auth, setAuth } = useContext(AuthContext);
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     useEffect(() => {
         var fatchData = async () => {
@@ -77,12 +79,16 @@ const ResetPassword = () => {
 
             if (response.data.statusCode == 9) {
                 errorMessgae.current.textContent = "Email не существует измените и повторите попытку";
+                return;
             }
             else if (response.data.statusCode != 0) {
                 errorMessgae.current.textContent = response.data.description;
+                return;
             }
 
+
             console.log(response);
+            setModalIsOpen(true);
         }
         catch (error) {
             console.log(error);
@@ -113,6 +119,11 @@ const ResetPassword = () => {
                 <section className={styles.saveChanging}>
                     <button type="submit" className={styles.btn}>Сбросить пароль</button>
                 </section>
+                <Modal isOpen={modalIsOpen}
+                    onClose={() => {setModalIsOpen(false)}}>
+                    <h1>Письмо отправленно</h1>
+                    <p>Проверьте почту для сброса пароля</p>
+                </Modal>
             </form>
 
         </div>

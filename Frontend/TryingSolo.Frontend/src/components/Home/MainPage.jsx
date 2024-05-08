@@ -14,35 +14,13 @@ import { Link, useNavigate } from "react-router-dom";
 // сделать само расписание
 // функции которые я выбрал лежат в mistral ai 
 // получать от пользователя его аватарку и устанавливать
+// поработать над рассылкой писем что бы они были красивые 
 const Home = () => {
     const {auth, setAuth} = useContext(AuthContext);
     var c = Cookies.get("RefreshToken");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef(null);
     const navigate = useNavigate();
-    // const [load, setLoad] = useState(true);
-    // const [data, setData] = useState({});
-
-    const testRefreshToken = async (e) => {
-        e.preventDefault();
-
-        try{        
-            var response = await api.get('/Home/Index', {
-                withCredentials: true,
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${auth.token}`
-                }
-            });
-
-            //console.log(response);
-        }
-        catch(error) {
-            console.log(error);
-        }
-    }
-
-
 
     const handleClickOutside = (event) => {
         if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -78,17 +56,8 @@ const Home = () => {
         e.preventDefault();
         await AwaitableSignOut();
         navigate("/Auth");
-
+        
     }
-
-
-    // useEffect(() => {
-    //     console.log("1234");
-    // }, []);
-
-    // useEffect(() => {
-    //     setLoad(false);
-    // }, [data]);
 
     return (
         <div className={styles.wrapper} onClick={handleClickOutside}>

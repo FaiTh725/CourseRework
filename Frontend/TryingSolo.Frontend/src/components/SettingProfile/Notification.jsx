@@ -9,12 +9,13 @@ import { useNavigate } from "react-router-dom";
 import useParseToken from "../../hooks/useParseToken";
 import useUpdateToken from "../../hooks/useUpdateToken";
 import api from "../../api/helpAxios";
+import { HubConnectionBuilder } from "@microsoft/signalr";
 
 
 const Notitifcation = () => {
     const [notificationEmail, setNotificationEmail] = useState(false);
     const errorMessage = useRef(null);
-    const {auth, setAuth} = useContext(AuthContext);
+    const { auth, setAuth } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const NotificationByEmail = async (e) => {
@@ -45,12 +46,12 @@ const Notitifcation = () => {
         }
         catch (error) {
             if (error.request.status == 0) {
-                
-                await useRediresctionRefreshToken(() => {NotificationByEmail(e)},
-                setAuth, 
-                navigate, 
-                useUpdateToken, 
-                useParseToken);
+
+                await useRediresctionRefreshToken(() => { NotificationByEmail(e) },
+                    setAuth,
+                    navigate,
+                    useUpdateToken,
+                    useParseToken);
 
             }
         }
@@ -81,11 +82,11 @@ const Notitifcation = () => {
             }
             catch (error) {
                 if (error.request.status == 0) {
-                    await useRediresctionRefreshToken(() => {fatchData()},
-                    setAuth, 
-                    navigate, 
-                    useUpdateToken, 
-                    useParseToken);
+                    await useRediresctionRefreshToken(() => { fatchData() },
+                        setAuth,
+                        navigate,
+                        useUpdateToken,
+                        useParseToken);
 
                 }
             }

@@ -15,14 +15,37 @@ namespace Shedule.Services.Implementations
             this.configuration = configuration;
         }
 
+        public async Task NotificationAboutChangingSheduleFiles(string email)
+        {
+            var emailAuth = configuration.GetSection("EmailAuthentification").Get<EmailAuth>();
+
+            MimeMessage msg = new MimeMessage();
+
+            msg.From.Add(new MailboxAddress("Изменения в расписании", emailAuth.Login));
+            msg.To.Add(new MailboxAddress("Перейдите по ссылке что бы ввести новый пароль", email));
+
+            var bodyBuilder = new BodyBuilder();
+            bodyBuilder.HtmlBody = $@"<h1>В расписании произошли изменения перепроверьте его<h1/>";
+
+            msg.Body = bodyBuilder.ToMessageBody();
+
+            using (var client = new SmtpClient())
+            {
+                await client.ConnectAsync("smtp.mail.ru", 465);
+                await client.AuthenticateAsync(emailAuth.Login, emailAuth.Password);
+                await client.SendAsync(msg);
+                await client.DisconnectAsync(true);
+            }
+        }
+
         public async Task SendEmail(string email, string subject, string message)
         {
             var emailAuth = configuration.GetSection("EmailAuthentification").Get<EmailAuth>();
 
             MimeMessage msg = new MimeMessage();
 
-            msg.From.Add(new MailboxAddress("Проверка отправителя", "courseproject2024@mail.ru"));
-            msg.To.Add(new MailboxAddress("it me", email));
+            msg.From.Add(new MailboxAddress("Восстановление пароля", emailAuth.Login));
+            msg.To.Add(new MailboxAddress("Перейдите по ссылке что бы ввести новый пароль", email));
             msg.Subject = subject;
 
             var bodyBuilder = new BodyBuilder();
@@ -32,10 +55,10 @@ namespace Shedule.Services.Implementations
 
             using (var client = new SmtpClient())
             {
-                client.Connect("smtp.mail.ru", 465);
-                client.Authenticate(emailAuth.Login, emailAuth.Password);
-                client.Send(msg);
-                client.Disconnect(true);
+                await client.ConnectAsync("smtp.mail.ru", 465);
+                await client.AuthenticateAsync(emailAuth.Login, emailAuth.Password);
+                await client.SendAsync(msg);
+                await client.DisconnectAsync(true);
             }
         }
     }

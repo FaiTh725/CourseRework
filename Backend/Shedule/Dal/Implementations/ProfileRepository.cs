@@ -32,6 +32,11 @@ namespace Shedule.Dal.Implementations
             return await context.Profiles.Include(x => x.User).FirstOrDefaultAsync(x => x.Id == Id);
         }
 
+        public async Task<IEnumerable<ProfileEntity>> GetSubscribeleProfile()
+        {
+            return await context.Profiles.Where(x => x.NotificationEmail == true).ToListAsync();
+        }
+
         public async Task<ProfileEntity> Update(int userId, ProfileEntity profile)
         {
             var oldProfile = await GetPorofileById(userId);
@@ -40,7 +45,7 @@ namespace Shedule.Dal.Implementations
             oldProfile.About = profile.About;
             oldProfile.Email = profile.Email;
             oldProfile.UserName = profile.UserName;
-            if(profile.LogoImage.Length != 0)
+            if(profile.LogoImage != null && profile.LogoImage.Length != 0)
             {
                 oldProfile.LogoImage = profile.LogoImage;
             }

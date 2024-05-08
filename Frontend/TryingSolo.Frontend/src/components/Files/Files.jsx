@@ -10,6 +10,8 @@ import api from "../../api/helpAxios";
 import useParseToken from "../../hooks/useParseToken";
 import useUpdateToken from "../../hooks/useUpdateToken"
 import AuthContext from "../Context/AuthProvider";
+import { HubConnectionBuilder } from "@microsoft/signalr";
+import { useNavigate } from "react-router-dom";
 
 const Files = () => {
     const filePicker = useRef(null);
@@ -17,11 +19,12 @@ const Files = () => {
     const [uploadFile, setUploadFile] = useState(null);
     const [files, setFiles] = useState([]);
     const [viewFiles, setViewFiles] = useState([]);
-    const {auth, setAuth} = useContext(AuthContext);
+    const { auth, setAuth } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const HandleFilterFiles = (e) => {
         const value = e.target.value;
-        
+
         setViewFiles(files.filter(s => s.name.startsWith(value)));
     }
 
@@ -53,6 +56,8 @@ const Files = () => {
                     }
                 });
 
+
+
             if (response.data.statusCode != 0) {
                 errorMessage.current.textContent = response.data.description;
                 return;
@@ -63,45 +68,33 @@ const Files = () => {
             filePicker.current.value = null;
             setFiles(prevFiles => [...prevFiles, response.data.data]);
             setViewFiles(prevFiles => [...prevFiles, response.data.data]);
+
         }
         catch (error) {
             console.log(error)
             if (error.request.status == 0) {
-                console.log("Переадресация на получение токена");
-                const { tokenSmall, tokenBig } = await useUpdateToken();
-
-                console.log(`${tokenSmall} - ${tokenBig}`);
-
-                if (tokenSmall == null || tokenBig == null) {
-                    localStorage.removeItem("token");
-                    setAuth({});
-                    navigate("/Auth");
-                }
-                const { id, login, role } = useParseToken(tokenSmall);
-
-                localStorage.setItem("token", tokenSmall);
-                setAuth({ id, login, role });
-
-                await AddFile(e);
+                await useRediresctionRefreshToken(() => { AddFile(e) },
+                    setAuth,
+                    navigate,
+                    useUpdateToken,
+                    useParseToken);
             }
         }
     }
 
     const GetAllFiles = async () => {
-        try
-        {
+        try {
             const token = localStorage.getItem("token");
 
-            var response = await api.get("/File/GetAllFiles",{
+            var response = await api.get("/File/GetAllFiles", {
                 withCredentials: true,
                 headers: {
-                    "Content-Type" : "application/json",
-                    "Authorization" : `Bearer ${token}`
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
                 }
             });
 
-            if(response.data.statusCode != 0)
-            {
+            if (response.data.statusCode != 0) {
                 errorMessage.current.textContent = response.data.description;
                 return;
             }
@@ -109,27 +102,14 @@ const Files = () => {
             setFiles(response.data.data);
             setViewFiles(response.data.data);
         }
-        catch (error) 
-        {
+        catch (error) {
             console.log(error)
-            if(error.request.status == 0)
-            {
-                console.log("Переадресация на получение токена");
-                const { tokenSmall, tokenBig } = await useUpdateToken();
-
-                console.log(`${tokenSmall} - ${tokenBig}`);
-
-                if (tokenSmall == null || tokenBig == null) {
-                    localStorage.removeItem("token");
-                    setAuth({});
-                    navigate("/Auth");
-                }
-                const { id, login, role } = useParseToken(tokenSmall);
-
-                localStorage.setItem("token", tokenSmall);
-                setAuth({ id, login, role });
-
-                await GetAllFiles();
+            if (error.request.status == 0) {
+                await useRediresctionRefreshToken(() => { GetAllFiles() },
+                    setAuth,
+                    navigate,
+                    useUpdateToken,
+                    useParseToken);
             }
         }
     }
@@ -138,23 +118,21 @@ const Files = () => {
         e.preventDefault();
         console.log(id);
 
-        try
-        {
+        try {
             const token = localStorage.getItem("token");
-            var response = await api.post("/File/DeleteFile", 
-            {
-                IdFile:id
-            }, 
-            {
-                withCredentials: true,
-                headers: {
-                    "Content-Type" : "application/json",
-                    "Authorization" : `Bearer ${token}`
-                }
-            })
+            var response = await api.post("/File/DeleteFile",
+                {
+                    IdFile: id
+                },
+                {
+                    withCredentials: true,
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                })
 
-            if(response.data.statusCode != 0)
-            {
+            if (response.data.statusCode != 0) {
                 errorMessage.current.textContent = response.data.description;
                 return;
             }
@@ -162,28 +140,33 @@ const Files = () => {
             const newFiles = files.filter(file => file.id != id);
             setFiles(newFiles);
             setViewFiles(newFiles);
+
         }
-        catch (error)
-        {
+        catch (error) {
             console.log(error)
-            if(error.request.status == 0)
-            {
-                console.log("Переадресация на получение токена");
-                const { tokenSmall, tokenBig } = await useUpdateToken();
+            if (error.request.status == 0) {
+                // console.log("Переадресация на получение токена");
+                // const { tokenSmall, tokenBig } = await useUpdateToken();
 
-                console.log(`${tokenSmall} - ${tokenBig}`);
+                // console.log(`${tokenSmall} - ${tokenBig}`);
 
-                if (tokenSmall == null || tokenBig == null) {
-                    localStorage.removeItem("token");
-                    setAuth({});
-                    navigate("/Auth");
-                }
-                const { id, login, role } = useParseToken(tokenSmall);
+                // if (tokenSmall == null || tokenBig == null) {
+                //     localStorage.removeItem("token");
+                //     setAuth({});
+                //     navigate("/Auth");
+                // }
+                // const { id, login, role } = useParseToken(tokenSmall);
 
-                localStorage.setItem("token", tokenSmall);
-                setAuth({ id, login, role });
+                // localStorage.setItem("token", tokenSmall);
+                // setAuth({ id, login, role });
 
-                await DeleteFile();
+                // await DeleteFile();
+
+                await useRediresctionRefreshToken(() => { DeleteFile() },
+                    setAuth,
+                    navigate,
+                    useUpdateToken,
+                    useParseToken);
             }
         }
     }
@@ -191,59 +174,91 @@ const Files = () => {
     const ChangeDescriptionFile = async (e, id, description) => {
         e.preventDefault();
 
-        try
-        {
+        try {
             const token = localStorage.getItem("token");
 
-            var response = await api.post("/File/ChangeDescriptionExcelFile", 
-            {
-                IdFile:id,
-                Description: description
-            }, 
-            {
-                withCredentials: true,
-                headers: {
-                    "Content-Type" : "application/json",
-                    "Authorization" : `Bearer ${token}`
-                }    
-            });
+            var response = await api.post("/File/ChangeDescriptionExcelFile",
+                {
+                    IdFile: id,
+                    Description: description
+                },
+                {
+                    withCredentials: true,
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
 
-            if(response.data.statusCode != 0)
-            {
-                errorMessage.current.textContent = response.data.description;    
+            if (response.data.statusCode != 0) {
+                errorMessage.current.textContent = response.data.description;
             }
         }
-        catch (error) 
-        {
+        catch (error) {
             console.log(error)
-            if(error.request.status == 0)
-            {
-                console.log("Переадресация на получение токена");
-                const { tokenSmall, tokenBig } = await useUpdateToken();
-
-                console.log(`${tokenSmall} - ${tokenBig}`);
-
-                if (tokenSmall == null || tokenBig == null) {
-                    localStorage.removeItem("token");
-                    setAuth({});
-                    navigate("/Auth");
-                }
-                const { id, login, role } = useParseToken(tokenSmall);
-
-                localStorage.setItem("token", tokenSmall);
-                setAuth({ id, login, role });
-
-                await DeleteFile();
+            if (error.request.status == 0) {
+                await useRediresctionRefreshToken(() => { ChangeDescriptionFile(e, id, description) },
+                    setAuth,
+                    navigate,
+                    useUpdateToken,
+                    useParseToken);
             }
         }
     }
 
     useEffect(() => {
-        var fatchData = async() =>
-        {
+        var fatchData = async () => {
             await GetAllFiles();
         }
         fatchData();
+
+        var lisener = async () => {
+
+            const token = localStorage.getItem("token");
+            const {id, login, roles} = useParseToken(token);
+
+            var connection = new HubConnectionBuilder()
+                .withUrl("https://localhost:7214/ReciveEmailMessage")
+                .withAutomaticReconnect()
+                .build();
+
+            connection.on("ReceiveSheduleChanging", async (message) => {
+                console.log(message);
+                console.log("Сработала оповещалска");
+                try
+                {
+
+                    var sendEmailsResponse = await api.get("/File/SendEmailChangingShedule",
+                        {
+                            withCredentials: true,
+                            headers: {
+                                'Content-Type': 'multipart/form-data',
+                                'Authorization': `Bearer ${token}`
+                            }
+                        }
+                    );
+    
+                    console.log(sendEmailsResponse);
+                }
+                catch(error)
+                {
+                    console.log(error);
+                }
+            });
+
+            try
+            {
+                console.log("запуск");
+                await connection.start();
+                console.log(connection);
+            }
+            catch(error)
+            {
+                console.log(error);
+            }
+        }
+
+        lisener();
     }, []);
 
     return (
@@ -255,10 +270,10 @@ const Files = () => {
             <main className={styles.main}>
                 <section className={styles.filesContainer}>
                     {viewFiles.map(file => (
-                        <File key={file.id} id={file.id} img={favorite} name={file.name} 
-                        description={file.description} DeleteFile={DeleteFile}
-                        ChangeDescription={ChangeDescriptionFile}/>
-                ))}
+                        <File key={file.id} id={file.id} img={favorite} name={file.name}
+                            description={file.description} DeleteFile={DeleteFile}
+                            ChangeDescription={ChangeDescriptionFile} />
+                    ))}
 
                 </section>
                 <div className={styles.functions}>
@@ -270,8 +285,8 @@ const Files = () => {
                                     <span className={styles.fileName}>{uploadFile == null ? "файл не выбран" : uploadFile.name}</span>
                                 </section>
                                 <button type="button" onClick={FilePick} className={styles.btn}>Выбрать файл</button>
-                                <input type="file" onChange={(e) => { setUploadFile(e.target.files[0]); errorMessage.current.textContent = ""; }} 
-                                accept=".xlsx" ref={filePicker} />
+                                <input type="file" onChange={(e) => { setUploadFile(e.target.files[0]); errorMessage.current.textContent = ""; }}
+                                    accept=".xlsx" ref={filePicker} />
                             </div>
                             <div className={styles.btnContainer}>
                                 <button type="submit" className={`${styles.btn}`}>Добавить</button>
@@ -302,12 +317,12 @@ const File = ({ id, img, name, description, DeleteFile, ChangeDescription }) => 
             </div>
             <div className={styles.info}>
                 <h2>{name}</h2>
-                <input type="text" onBlur={(e) => {ChangeDescription(e, id, descriptionInner)}}
-                onChange={(e) => {setDescriptionInner(e.target.value)}} maxLength={70} placeholder="описание" defaultValue={descriptionInner}/>
+                <input type="text" onBlur={(e) => { ChangeDescription(e, id, descriptionInner) }}
+                    onChange={(e) => { setDescriptionInner(e.target.value) }} maxLength={70} placeholder="описание" defaultValue={descriptionInner} />
             </div>
             <div className={styles.deleteContainer}>
-                <button type="button" onClick={(e) => {DeleteFile(e, id)}}>
-                    <img src={del} alt="delete" height={20}/>
+                <button type="button" onClick={(e) => { DeleteFile(e, id) }}>
+                    <img src={del} alt="delete" height={20} />
                 </button>
             </div>
         </div>

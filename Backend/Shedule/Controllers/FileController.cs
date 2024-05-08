@@ -50,5 +50,14 @@ namespace Shedule.Controllers
 
             return new JsonResult(response);
         }
+
+        [HttpGet("[action]")]
+        [Authorize]
+        public async Task<IActionResult> SendEmailChangingShedule()
+        {
+            var response = fileService.SendEmailAboutChanging();
+
+            return new JsonResult(response);   
+        }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Shedule.Dal;
 using Shedule.Dal.Implementations;
 using Shedule.Dal.Interfaces;
+using Shedule.Hubs;
 using Shedule.Models.Jwt;
 using Shedule.Services.Implementations;
 using Shedule.Services.Interfaces;
@@ -17,6 +18,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddSignalR();
 
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -79,5 +82,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseCors("Web");
+
+app.MapHub<ReciveEmailHub>("/ReciveEmailMessage");
 
 app.Run();

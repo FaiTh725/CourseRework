@@ -9,15 +9,16 @@ const ProtectedRoute = () => {
     const {auth, setAuth} = useContext(AuthContext);
     const [load, setLoad] = useState(true);
     const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
+        
         var token = localStorage.getItem('token');
         if (!token) {
-
-            return <Navigate to="/Auth" state={{from: location}}/>;
+            navigate("/Auth");
         }
         const {id, login, role} = useParseToken(token);
-        console.log(login);
+        //console.log(login);
         setAuth({ id, login, role });
         setLoad(false);
     }, []);
