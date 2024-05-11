@@ -15,6 +15,7 @@ import { Link, useNavigate } from "react-router-dom";
 // функции которые я выбрал лежат в mistral ai 
 // получать от пользователя его аватарку и устанавливать
 // поработать над рассылкой писем что бы они были красивые 
+// убрать расширение файла при просмотре всех файлов
 const Home = () => {
     const {auth, setAuth} = useContext(AuthContext);
     var c = Cookies.get("RefreshToken");

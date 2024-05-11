@@ -15,5 +15,7 @@ namespace Shedule.Dal.Interfaces
         Task DeleteExcelFile(ExcelFileEntity excelFile);
 
         Task<ExcelFileEntity> Update(int idFile, ExcelFileEntity newData);
+
+        Task<ExcelFileEntity> GetSelectedFile();
     }
 }

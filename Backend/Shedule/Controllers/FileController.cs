@@ -55,9 +55,18 @@ namespace Shedule.Controllers
         [Authorize]
         public async Task<IActionResult> SendEmailChangingShedule()
         {
-            var response = fileService.SendEmailAboutChanging();
+            var response = await fileService.SendEmailAboutChanging();
 
             return new JsonResult(response);   
+        }
+
+        [HttpPost("[action]")]
+        [Authorize]
+        public async Task<IActionResult> SelectFile(SelectFileRequest request)
+        {
+            var response = await fileService.SelectFile(request);
+
+            return new JsonResult(response);
         }
     }
 }

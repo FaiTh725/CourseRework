@@ -12,6 +12,7 @@ import RoleProtectedRoute from './components/Context/RoleProtectedRote'
 import Files from './components/Files/Files'
 import Profile from './components/SettingProfile/Profile'
 import ResetPassword from './components/ResetPassword/ResetPassword'
+import Shedule from './components/Shedule/Shedule'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           {/* перенести файлы в раздел для методистов и админов */}
           <Route exact path='/Files' element={<Files/>}/> 
           <Route exact path='/Profile' element={<Profile/>}/>
+          <Route exact path='/Shedule' element= {<Shedule/>}/>
           <Route element={<ProtectedRoute/>}>
             <Route exact path='/Home' element={<Home/>}/>
             <Route element={<RoleProtectedRoute role={["Admin"]}/>}>

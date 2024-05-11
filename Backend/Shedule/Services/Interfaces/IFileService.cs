@@ -15,5 +15,7 @@ namespace Shedule.Services.Interfaces
         Task<BaseResponse<AddFileResponse>> ChangeDescriptionExcelFile(UpdateFileRequest request);
 
         Task<DataResponse> SendEmailAboutChanging();
+
+        Task<DataResponse> SelectFile(SelectFileRequest request);
     }
 }

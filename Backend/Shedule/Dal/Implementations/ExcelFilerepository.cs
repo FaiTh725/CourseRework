@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using OfficeOpenXml.Utils;
 using Shedule.Dal.Interfaces;
 using Shedule.Domain.Entities;
 
@@ -64,6 +65,11 @@ namespace Shedule.Dal.Implementations
         public async Task<ExcelFileEntity> GetExcelFileByName(string name)
         {
             return await context.ExcelFiles.FirstOrDefaultAsync(x => x.Name == name);
+        }
+
+        public async Task<ExcelFileEntity> GetSelectedFile()
+        {
+            return await context.ExcelFiles.FirstOrDefaultAsync(x => x.IsSelected == true);
         }
 
         public async Task<ExcelFileEntity> Update(int idFile, ExcelFileEntity newData)

@@ -13,6 +13,16 @@ namespace Shedule.Dal.Implementations
             this.context = context;
         }
 
+        public async Task<SheduleGroup> AddFolovingGroup(int idProfile, SheduleGroup group)
+        {
+            var profile = await GetPorofileById(idProfile);
+            profile.FolovingGroup.Add(group);
+
+            await context.SaveChangesAsync();
+
+            return group;
+        }
+
         public async Task<ProfileEntity> CreateProfile(ProfileEntity profile)
         {
             var addProfile = context.Profiles.Add(profile);
@@ -22,19 +32,37 @@ namespace Shedule.Dal.Implementations
             return addProfile.Entity;
         }
 
+        public async Task DeleteFolovingGroup(int idProfile, SheduleGroup group)
+        {
+            var profile = await GetPorofileById(idProfile);
+            profile.FolovingGroup.Remove(group);
+
+            await context.SaveChangesAsync();
+        }
+
         public async Task<ProfileEntity> GetPorofileByEmail(string email)
         {
-            return await context.Profiles.Include(x => x.User).FirstOrDefaultAsync(x => x.Email == email);
+            return await context.Profiles
+                    .Include(x => x.FolovingGroup)
+                    .Include(x => x.User)
+                    .FirstOrDefaultAsync(x => x.Email == email);
         }
 
         public async Task<ProfileEntity> GetPorofileById(int Id)
         {
-            return await context.Profiles.Include(x => x.User).FirstOrDefaultAsync(x => x.Id == Id);
+            return await context.Profiles
+                    .Include(x => x.FolovingGroup)
+                    .Include(x => x.User)
+                    .FirstOrDefaultAsync(x => x.Id == Id);
         }
 
         public async Task<IEnumerable<ProfileEntity>> GetSubscribeleProfile()
         {
-            return await context.Profiles.Where(x => x.NotificationEmail == true).ToListAsync();
+            return await context.Profiles
+                    .Include(x => x.FolovingGroup)
+                    .Include(x => x.User)
+                    .Where(x => x.NotificationEmail == true)
+                    .ToListAsync();
         }
 
         public async Task<ProfileEntity> Update(int userId, ProfileEntity profile)

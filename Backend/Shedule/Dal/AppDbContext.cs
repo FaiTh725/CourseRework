@@ -19,10 +19,20 @@ namespace Shedule.Dal
 
         public DbSet<ProfileEntity> Profiles { get; set; }
 
+        public DbSet<SheduleGroup> SheduleGroups { get; set; }
+
+        public DbSet<SheduleDayOfWeek> SheduleDayOfWeeks { get; set; }
+
+        public DbSet<Subject> Subjects { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ProfileConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new SheduleDayOfWeekConfiguration());
+            modelBuilder.ApplyConfiguration(new SheduleDayOfWeekConfiguration());
+            modelBuilder.ApplyConfiguration(new SubjectConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

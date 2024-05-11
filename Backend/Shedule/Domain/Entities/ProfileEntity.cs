@@ -20,5 +20,7 @@
         public byte[]? LogoImage { get; set; } = new byte[0];
 
         public bool NotificationEmail { get; set; } = false;
+
+        public List<SheduleGroup> FolovingGroup = new();
     }
 }

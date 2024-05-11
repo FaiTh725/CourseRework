@@ -13,6 +13,9 @@ namespace Shedule.Dal.Configuration
             builder.HasOne(x => x.User)
                 .WithOne(x => x.Profile)
                 .HasForeignKey<UserEntity>(x => x.ProfileId);
+
+            builder.HasMany(x => x.FolovingGroup)
+                .WithMany(x => x.Profiles);
         }
     }
 }

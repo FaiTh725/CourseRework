@@ -12,6 +12,7 @@ import useUpdateToken from "../../hooks/useUpdateToken"
 import AuthContext from "../Context/AuthProvider";
 import { HubConnectionBuilder } from "@microsoft/signalr";
 import { useNavigate } from "react-router-dom";
+import useRediresctionRefreshToken from "../../hooks/useRedirectionRefreshToken";
 
 const Files = () => {
     const filePicker = useRef(null);
@@ -145,22 +146,6 @@ const Files = () => {
         catch (error) {
             console.log(error)
             if (error.request.status == 0) {
-                // console.log("Переадресация на получение токена");
-                // const { tokenSmall, tokenBig } = await useUpdateToken();
-
-                // console.log(`${tokenSmall} - ${tokenBig}`);
-
-                // if (tokenSmall == null || tokenBig == null) {
-                //     localStorage.removeItem("token");
-                //     setAuth({});
-                //     navigate("/Auth");
-                // }
-                // const { id, login, role } = useParseToken(tokenSmall);
-
-                // localStorage.setItem("token", tokenSmall);
-                // setAuth({ id, login, role });
-
-                // await DeleteFile();
 
                 await useRediresctionRefreshToken(() => { DeleteFile() },
                     setAuth,
@@ -206,6 +191,51 @@ const Files = () => {
         }
     }
 
+    const SelectFile = async (e, id, isSelected) => {
+        e.preventDefault();
+
+        try {
+            var token = localStorage.getItem("token");
+
+            var response = await api.post("/File/SelectFile", {
+                IdFile: id,
+                IsSelectedFile: !isSelected
+            }, {
+                withCredentials: true,
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+
+            if (response.data.statusCode != 0) {
+                errorMessage.current.textContent = response.data.description;
+                return;
+            }
+
+            const newFiles = files.map(file => {
+                if (file.id === id) {
+                    return { ...file, isSelected: !file.isSelected };
+                }
+                return file;
+            });
+
+            setFiles(newFiles);
+            setViewFiles(newFiles);
+
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+            if (error.request.status == 0) {
+                await useRediresctionRefreshToken(() => { SelectFile(e, id, isSelected) },
+                    setAuth,
+                    navigate,
+                    useUpdateToken,
+                    useParseToken);
+            }
+        }
+    }
+
     useEffect(() => {
         var fatchData = async () => {
             await GetAllFiles();
@@ -215,7 +245,7 @@ const Files = () => {
         var lisener = async () => {
 
             const token = localStorage.getItem("token");
-            const {id, login, roles} = useParseToken(token);
+            const { id, login, roles } = useParseToken(token);
 
             var connection = new HubConnectionBuilder()
                 .withUrl("https://localhost:7214/ReciveEmailMessage")
@@ -225,8 +255,7 @@ const Files = () => {
             connection.on("ReceiveSheduleChanging", async (message) => {
                 console.log(message);
                 console.log("Сработала оповещалска");
-                try
-                {
+                try {
 
                     var sendEmailsResponse = await api.get("/File/SendEmailChangingShedule",
                         {
@@ -237,23 +266,20 @@ const Files = () => {
                             }
                         }
                     );
-    
+
                     console.log(sendEmailsResponse);
                 }
-                catch(error)
-                {
+                catch (error) {
                     console.log(error);
                 }
             });
 
-            try
-            {
+            try {
                 console.log("запуск");
                 await connection.start();
                 console.log(connection);
             }
-            catch(error)
-            {
+            catch (error) {
                 console.log(error);
             }
         }
@@ -270,9 +296,11 @@ const Files = () => {
             <main className={styles.main}>
                 <section className={styles.filesContainer}>
                     {viewFiles.map(file => (
-                        <File key={file.id} id={file.id} img={favorite} name={file.name}
+                        <File key={file.id} id={file.id} isSelected={file.isSelected} name={file.name}
+                            img={file.isSelected ? favoriteFill : favorite}
                             description={file.description} DeleteFile={DeleteFile}
-                            ChangeDescription={ChangeDescriptionFile} />
+                            ChangeDescription={ChangeDescriptionFile}
+                            SelectFile={SelectFile} />
                     ))}
 
                 </section>
@@ -302,15 +330,16 @@ const Files = () => {
     )
 }
 
-const File = ({ id, img, name, description, DeleteFile, ChangeDescription }) => {
+const File = ({ id, isSelected, name, description, DeleteFile, ChangeDescription, SelectFile }) => {
     const [descriptionInner, setDescriptionInner] = useState(description);
+
 
     return (
         <div className={styles.file}>
             <div className={styles.flagContainer}>
-                <div className={styles.wrapperFlag}>
-                    <img src={img} alt="favorite" height={45} />
-                </div>
+                <button type="button" onClick={(e) => { SelectFile(e, id, isSelected) }} className={styles.wrapperFlag}>
+                    <img src={isSelected ? favoriteFill : favorite} alt="favorite" height={45} />
+                </button>
             </div>
             <div className={styles.fileContainer}>
                 <img src={fileExce} alt="fileExcel" height={80} />

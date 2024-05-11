@@ -10,19 +10,25 @@ namespace Shedule.Services.Implementations
     public class FileService : IFileService
     {
         private readonly IExcelFileRepository excelFileRepository;
+        private readonly ISheduleRepository sheduleRepository;
         private readonly IHubContext<ReciveEmailHub> hubContext;
         private readonly IProfileRepository profileRepository;
         private readonly IEmailService emailService;
+        private readonly ISheduleService sheduleService;
 
         public FileService(IExcelFileRepository excelFileRepository, 
                 IHubContext<ReciveEmailHub> hubContext, 
                 IProfileRepository profileRepository,
-                IEmailService emailService)
+                IEmailService emailService,
+                ISheduleService sheduleService,
+                ISheduleRepository sheduleRepository)
         {
             this.excelFileRepository = excelFileRepository; 
             this.hubContext = hubContext;
             this.profileRepository = profileRepository;
             this.emailService = emailService;
+            this.sheduleService = sheduleService;
+            this.sheduleRepository = sheduleRepository;
         }
 
         public async Task<BaseResponse<AddFileResponse>> AddFile(IFormFile file)
@@ -41,8 +47,6 @@ namespace Shedule.Services.Implementations
 
                 var createExcelFile = await excelFileRepository.AddFile(file);
 
-                //await hubContext.Clients.Group("FileUploadOrDelete").SendAsync("ReceiveSheduleChanging", "Расписание обновилось");
-                await hubContext.Clients.All.SendAsync("ReceiveSheduleChanging", "Расписание обновилось");
 
                 return new BaseResponse<AddFileResponse>
                 {
@@ -129,8 +133,6 @@ namespace Shedule.Services.Implementations
 
                 await excelFileRepository.DeleteExcelFile(file);
                 
-                //await hubContext.Clients.Group("FileUploadOrDelete").SendAsync("ReceiveSheduleChanging", "Расписание обновилось");
-                await hubContext.Clients.All.SendAsync("ReceiveSheduleChanging", "Расписание обновилось");
                 
                 return new DataResponse
                 {
@@ -174,6 +176,82 @@ namespace Shedule.Services.Implementations
                     Description = "Ошибка сервера",
                     StatusCode = Domain.Enums.StatusCode.ServerError,
                     Data = new List<AddFileResponse>()
+                };
+            }
+        }
+
+        public async Task<DataResponse> SelectFile(SelectFileRequest request)
+        {
+            try
+            {
+                // если передается false то убравть выделение
+                if(!request.IsSelectedFile)
+                {
+                    var selectedFile = await excelFileRepository.GetSelectedFile();
+
+                    if(selectedFile is not null)
+                    {
+                        selectedFile.IsSelected = false;
+                        await excelFileRepository.Update(selectedFile.Id, selectedFile);
+                    }
+
+                    await sheduleRepository.ClearSelectedShedule();
+
+                    await hubContext.Clients.All.SendAsync("ReceiveSheduleChanging", "Расписание обновилось");
+
+                    return new DataResponse
+                    {
+                        Description = "Убрали выделени",
+                        StatusCode = Domain.Enums.StatusCode.Ok
+                    };
+                }
+
+                var file = await excelFileRepository.GetExcelFileById(request.IdFile);
+
+                if(file is null)
+                {
+                    return new DataResponse
+                    {
+                        Description = "Файл не найден",
+                        StatusCode = Domain.Enums.StatusCode.NotFoundExcelFile
+                    };
+                }
+
+                var trySelectFile = await sheduleService.ParseExcelFileOfShedule(file.Name);
+
+                if (trySelectFile)
+                {
+                    var oldSelectedFile = await excelFileRepository.GetSelectedFile();
+                    if(oldSelectedFile is not null)
+                    {
+                        oldSelectedFile.IsSelected = false;
+                        await excelFileRepository.Update(oldSelectedFile.Id, oldSelectedFile);
+                    }
+
+                    await hubContext.Clients.All.SendAsync("ReceiveSheduleChanging", "Расписание обновилось");
+
+                    file.IsSelected = true;
+                    await excelFileRepository.Update(file.Id, file);
+
+                    return new DataResponse
+                    {
+                        StatusCode = Domain.Enums.StatusCode.Ok,
+                        Description = "Выбрали файл в качестве основного"
+                    };
+                }
+
+                return new DataResponse
+                {
+                    StatusCode = Domain.Enums.StatusCode.InvalidData,
+                    Description = "Данный файл неверного формата"
+                };
+            }
+            catch
+            {
+                return new DataResponse
+                {
+                    Description = "Ошибка сервера",
+                    StatusCode = Domain.Enums.StatusCode.ServerError
                 };
             }
         }

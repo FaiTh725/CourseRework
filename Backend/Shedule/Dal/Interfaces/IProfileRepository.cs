@@ -13,6 +13,10 @@ namespace Shedule.Dal.Interfaces
         Task<ProfileEntity> Update(int userId, ProfileEntity profile);
 
         Task<IEnumerable<ProfileEntity>> GetSubscribeleProfile();
+
+        Task<SheduleGroup> AddFolovingGroup(int idProfile, SheduleGroup group);
+
+        Task DeleteFolovingGroup(int idProfile, SheduleGroup group);
     
     }
 }

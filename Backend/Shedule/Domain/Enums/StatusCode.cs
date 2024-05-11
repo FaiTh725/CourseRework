@@ -17,8 +17,9 @@
         InvalidEmail,
 
         ExcelFileExist,
-        NotFoundExcelFile
-        
+        NotFoundExcelFile,
 
+        NotFoundGroup,
+        GroupIsFoloving
     }
 }

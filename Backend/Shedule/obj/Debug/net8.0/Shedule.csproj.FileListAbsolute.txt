@@ -138,3 +138,11 @@ C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\Shedule.staticw
 C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\MailKit.dll
 C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\MimeKit.dll
+C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\EPPlus.dll
+C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\EPPlus.Interfaces.dll
+C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\EPPlus.System.Drawing.dll
+C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\VSProjects\React\TryingSolo1\Backend\Shedule\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll

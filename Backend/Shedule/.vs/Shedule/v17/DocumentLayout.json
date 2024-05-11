@@ -3,208 +3,167 @@
   "WorkspaceRootPath": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|c:\\vsprojects\\react\\tryingsolo1\\backend\\shedule\\services\\implementations\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\implementations\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|c:\\vsprojects\\react\\tryingsolo1\\backend\\shedule\\services\\implementations\\sheduleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\implementations\\sheduleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\hubs\\reciveemailhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:hubs\\reciveemailhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|c:\\vsprojects\\react\\tryingsolo1\\backend\\shedule\\services\\interfaces\\isheduleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\interfaces\\isheduleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\services\\implementations\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\implementations\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|c:\\vsprojects\\react\\tryingsolo1\\backend\\shedule\\models\\shedule\\getshedulegroupresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\shedule\\getshedulegroupresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\domain\\entities\\shedulegroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:domain\\entities\\shedulegroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\controllers\\shedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:controllers\\shedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|c:\\vsprojects\\react\\tryingsolo1\\backend\\shedule\\services\\implementations\\jwtprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\implementations\\jwtprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\implementations\\profilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\implementations\\profilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|c:\\vsprojects\\react\\tryingsolo1\\backend\\shedule\\dal\\interfaces\\iprofilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\interfaces\\iprofilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\interfaces\\ishedulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\interfaces\\ishedulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\services\\implementations\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\implementations\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|c:\\vsprojects\\react\\tryingsolo1\\backend\\shedule\\models\\shedule\\folovinggrouprequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\shedule\\folovinggrouprequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|c:\\vsprojects\\react\\tryingsolo1\\backend\\shedule\\domain\\enums\\statuscode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:domain\\enums\\statuscode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|c:\\vsprojects\\react\\tryingsolo1\\backend\\shedule\\models\\shedule\\groupsresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\shedule\\groupsresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\implementations\\shedulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\implementations\\shedulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|c:\\vsprojects\\react\\tryingsolo1\\backend\\shedule\\models\\shedule\\coursesresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\shedule\\coursesresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240511171531_fixedReleation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240511171531_fixedReleation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\configuration\\shedulegroupconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\configuration\\shedulegroupconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|c:\\vsprojects\\react\\tryingsolo1\\backend\\shedule\\dal\\configuration\\profileconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\configuration\\profileconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240511171109_AddFolovingGroupToProfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240511171109_AddFolovingGroupToProfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\domain\\entities\\profileentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:domain\\entities\\profileentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\services\\implementations\\homeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\implementations\\homeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240504175920_automaticInitialProfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:Migrations\\20240504175920_automaticInitialProfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\hubs\\usersubscrybe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:hubs\\usersubscrybe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\models\\file\\addfileresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\file\\addfileresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\implementations\\excelfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\implementations\\excelfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\domain\\response\\dataresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:domain\\response\\dataresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\interfaces\\iprofilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\interfaces\\iprofilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\services\\interfaces\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\interfaces\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\services\\interfaces\\iprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\interfaces\\iprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\services\\implementations\\jwtprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\implementations\\jwtprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\services\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\models\\profile\\profileresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\profile\\profileresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\models\\profile\\notificationemailrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\profile\\notificationemailrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\services\\implementations\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\implementations\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\models\\profile\\profileimageresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\profile\\profileimageresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\domain\\response\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:domain\\response\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\models\\profile\\resetpasswordresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\profile\\resetpasswordresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|c:\\vsprojects\\react\\tryingsolo1\\backend\\shedule\\services\\implementations\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\implementations\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\models\\profile\\updateprofilerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\profile\\updateprofilerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\models\\profile\\resetpasswordconfirmerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\profile\\resetpasswordconfirmerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\models\\profile\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\profile\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\implementations\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\implementations\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\domain\\enums\\statuscode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:domain\\enums\\statuscode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\services\\interfaces\\ijwtprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|c:\\vsprojects\\react\\tryingsolo1\\backend\\shedule\\services\\interfaces\\ijwtprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\interfaces\\ijwtprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\models\\email\\emailauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\email\\emailauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\configuration\\profileconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\configuration\\profileconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\domain\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:domain\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\configuration\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\configuration\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\domain\\entities\\excelfileentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:domain\\entities\\excelfileentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\migrations\\20240504224842_addfullnametoprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:migrations\\20240504224842_addfullnametoprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240504174125_automaticInitialProfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240504174125_automaticInitialProfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\services\\implementations\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\implementations\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240504152939_correctRelationProfileUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240504152939_correctRelationProfileUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\implementations\\excelfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\implementations\\excelfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240504152510_addProfileEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240504152510_addProfileEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\services\\implementations\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\implementations\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\services\\interfaces\\ihomeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\interfaces\\ihomeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\services\\interfaces\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:services\\interfaces\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\models\\file\\updatefilerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\file\\updatefilerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\models\\file\\deletefilerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\file\\deletefilerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\models\\file\\selectfilerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:models\\file\\selectfilerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\interfaces\\iexcelfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\interfaces\\iexcelfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240506125206_addEmailNotification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:Migrations\\20240506125206_addEmailNotification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\configuration\\subjectconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\configuration\\subjectconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\dal\\configuration\\sheduledayofweekconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:dal\\configuration\\sheduledayofweekconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zelen\\.nuget\\packages\\epplus\\7.1.2\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240509180035_fixedNameShedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:Migrations\\20240509180035_fixedNameShedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240509165613_AddSheduleEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:Migrations\\20240509165613_AddSheduleEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240510122000_updateSheduleTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18DB5C95-2318-403C-8C59-5309CE94D343}|Shedule.csproj|solutionrelative:Migrations\\20240510122000_updateSheduleTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -214,7 +173,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -230,368 +189,271 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HomeService.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\HomeService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\HomeService.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\HomeService.cs",
-              "RelativeToolTip": "Services\\Implementations\\HomeService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "GetSheduleGroupResponse.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Shedule\\GetSheduleGroupResponse.cs",
+              "RelativeDocumentMoniker": "Models\\Shedule\\GetSheduleGroupResponse.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Shedule\\GetSheduleGroupResponse.cs",
+              "RelativeToolTip": "Models\\Shedule\\GetSheduleGroupResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T09:27:51.444Z"
+              "WhenOpened": "2024-05-11T22:21:01.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ISheduleService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Interfaces\\ISheduleService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ISheduleService.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Interfaces\\ISheduleService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ISheduleService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T14:36:38.257Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "FileController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\FileController.cs",
-              "RelativeDocumentMoniker": "Controllers\\FileController.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\FileController.cs",
-              "RelativeToolTip": "Controllers\\FileController.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAcwDkAAAAMAAAA",
+              "Title": "SheduleController.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\SheduleController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SheduleController.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\SheduleController.cs",
+              "RelativeToolTip": "Controllers\\SheduleController.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAmwEQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T21:43:45.285Z"
+              "WhenOpened": "2024-05-10T17:19:54.515Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProfileService.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\ProfileService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\ProfileService.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\ProfileService.cs",
-              "RelativeToolTip": "Services\\Implementations\\ProfileService.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAA4wCAAAAAIAAAA",
+              "DocumentIndex": 0,
+              "Title": "SheduleService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\SheduleService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\SheduleService.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\SheduleService.cs",
+              "RelativeToolTip": "Services\\Implementations\\SheduleService.cs",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAYwNUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T15:06:04.633Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EmailService.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\EmailService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\EmailService.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\EmailService.cs",
-              "RelativeToolTip": "Services\\Implementations\\EmailService.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwB0AAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T17:45:25.69Z"
+              "WhenOpened": "2024-05-09T16:59:23.055Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "ProfileEntity.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Entities\\ProfileEntity.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\ProfileEntity.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Entities\\ProfileEntity.cs",
-              "RelativeToolTip": "Domain\\Entities\\ProfileEntity.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA9wBUAAAA2AAAA",
+              "Title": "ISheduleRepository.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Interfaces\\ISheduleRepository.cs",
+              "RelativeDocumentMoniker": "Dal\\Interfaces\\ISheduleRepository.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Interfaces\\ISheduleRepository.cs",
+              "RelativeToolTip": "Dal\\Interfaces\\ISheduleRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T14:57:27.306Z"
+              "WhenOpened": "2024-05-09T17:01:01.04Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAuwEgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T22:27:01.443Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProfileController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\ProfileController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\ProfileController.cs",
-              "RelativeToolTip": "Controllers\\ProfileController.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAcwEQAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T15:04:30.543Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ProfileRepository.cs",
               "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Implementations\\ProfileRepository.cs",
               "RelativeDocumentMoniker": "Dal\\Implementations\\ProfileRepository.cs",
               "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Implementations\\ProfileRepository.cs",
               "RelativeToolTip": "Dal\\Implementations\\ProfileRepository.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAmwCMAAAAIAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowCcAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T15:03:57.805Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReciveEmailHub.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Hubs\\ReciveEmailHub.cs",
-              "RelativeDocumentMoniker": "Hubs\\ReciveEmailHub.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Hubs\\ReciveEmailHub.cs",
-              "RelativeToolTip": "Hubs\\ReciveEmailHub.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAswAgAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T16:23:12.525Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FileService.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\FileService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\FileService.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\FileService.cs",
-              "RelativeToolTip": "Services\\Implementations\\FileService.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAADwvy4AAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T21:31:35.65Z",
+              "WhenOpened": "2024-05-09T18:23:12.527Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "20240504175920_automaticInitialProfile.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240504175920_automaticInitialProfile.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240504175920_automaticInitialProfile.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240504175920_automaticInitialProfile.cs",
-              "RelativeToolTip": "Migrations\\20240504175920_automaticInitialProfile.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAlAAAA",
+              "DocumentIndex": 9,
+              "Title": "FolovingGroupRequest.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Shedule\\FolovingGroupRequest.cs",
+              "RelativeDocumentMoniker": "Models\\Shedule\\FolovingGroupRequest.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Shedule\\FolovingGroupRequest.cs",
+              "RelativeToolTip": "Models\\Shedule\\FolovingGroupRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T17:59:20.147Z"
+              "WhenOpened": "2024-05-11T17:17:10.65Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UserSubscrybe.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Hubs\\UserSubscrybe.cs",
-              "RelativeDocumentMoniker": "Hubs\\UserSubscrybe.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Hubs\\UserSubscrybe.cs",
-              "RelativeToolTip": "Hubs\\UserSubscrybe.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T17:47:11.906Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AddFileResponse.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\File\\AddFileResponse.cs",
-              "RelativeDocumentMoniker": "Models\\File\\AddFileResponse.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\File\\AddFileResponse.cs",
-              "RelativeToolTip": "Models\\File\\AddFileResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T21:29:03.348Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "DataResponse.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Response\\DataResponse.cs",
-              "RelativeDocumentMoniker": "Domain\\Response\\DataResponse.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Response\\DataResponse.cs",
-              "RelativeToolTip": "Domain\\Response\\DataResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T09:23:43.067Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-05T17:52:05.516Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ExcelFilerepository.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Implementations\\ExcelFilerepository.cs",
-              "RelativeDocumentMoniker": "Dal\\Implementations\\ExcelFilerepository.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Implementations\\ExcelFilerepository.cs",
-              "RelativeToolTip": "Dal\\Implementations\\ExcelFilerepository.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAcwBMAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T21:43:49.925Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 7,
               "Title": "IProfileRepository.cs",
               "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Interfaces\\IProfileRepository.cs",
               "RelativeDocumentMoniker": "Dal\\Interfaces\\IProfileRepository.cs",
               "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Interfaces\\IProfileRepository.cs",
               "RelativeToolTip": "Dal\\Interfaces\\IProfileRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABBAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T15:03:46.635Z"
+              "WhenOpened": "2024-05-11T17:30:19.369Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAuwCIAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "SheduleGroup.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Entities\\SheduleGroup.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\SheduleGroup.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Entities\\SheduleGroup.cs",
+              "RelativeToolTip": "Domain\\Entities\\SheduleGroup.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAAwCsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T15:06:13.246Z"
+              "WhenOpened": "2024-05-09T16:49:11.724Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IFileService.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Interfaces\\IFileService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IFileService.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Interfaces\\IFileService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IFileService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA0AAAA",
+              "DocumentIndex": 10,
+              "Title": "StatusCode.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Enums\\StatusCode.cs",
+              "RelativeDocumentMoniker": "Domain\\Enums\\StatusCode.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Enums\\StatusCode.cs",
+              "RelativeToolTip": "Domain\\Enums\\StatusCode.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T21:27:33.065Z"
+              "WhenOpened": "2024-05-11T17:34:00.493Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IProfileService.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Interfaces\\IProfileService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IProfileService.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Interfaces\\IProfileService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IProfileService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABPAAAA",
+              "DocumentIndex": 12,
+              "Title": "SheduleRepository.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Implementations\\SheduleRepository.cs",
+              "RelativeDocumentMoniker": "Dal\\Implementations\\SheduleRepository.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Implementations\\SheduleRepository.cs",
+              "RelativeToolTip": "Dal\\Implementations\\SheduleRepository.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAwwCMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T15:05:55.462Z"
+              "WhenOpened": "2024-05-09T17:01:19.783Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 5,
               "Title": "JwtProvider.cs",
               "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\JwtProvider.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\JwtProvider.cs",
               "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\JwtProvider.cs",
               "RelativeToolTip": "Services\\Implementations\\JwtProvider.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAIwCgAAAAtAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACgAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T17:59:37.823Z"
+              "WhenOpened": "2024-05-11T13:44:26.207Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "ProfileResponse.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Profile\\ProfileResponse.cs",
-              "RelativeDocumentMoniker": "Models\\Profile\\ProfileResponse.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Profile\\ProfileResponse.cs",
-              "RelativeToolTip": "Models\\Profile\\ProfileResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAlAAAA",
+              "DocumentIndex": 11,
+              "Title": "GroupsResponse.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Shedule\\GroupsResponse.cs",
+              "RelativeDocumentMoniker": "Models\\Shedule\\GroupsResponse.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Shedule\\GroupsResponse.cs",
+              "RelativeToolTip": "Models\\Shedule\\GroupsResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T15:37:02.138Z"
+              "WhenOpened": "2024-05-11T14:36:12.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "IEmailService.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Interfaces\\IEmailService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IEmailService.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Interfaces\\IEmailService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IEmailService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA/AAAA",
+              "DocumentIndex": 13,
+              "Title": "CoursesResponse.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Shedule\\CoursesResponse.cs",
+              "RelativeDocumentMoniker": "Models\\Shedule\\CoursesResponse.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Shedule\\CoursesResponse.cs",
+              "RelativeToolTip": "Models\\Shedule\\CoursesResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T17:45:19.643Z"
+              "WhenOpened": "2024-05-11T14:36:12.172Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "NotificationEmailRequest.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Profile\\NotificationEmailRequest.cs",
-              "RelativeDocumentMoniker": "Models\\Profile\\NotificationEmailRequest.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Profile\\NotificationEmailRequest.cs",
-              "RelativeToolTip": "Models\\Profile\\NotificationEmailRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T09:20:49.227Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "BaseResponse.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Response\\BaseResponse.cs",
-              "RelativeDocumentMoniker": "Domain\\Response\\BaseResponse.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Response\\BaseResponse.cs",
-              "RelativeToolTip": "Domain\\Response\\BaseResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T09:22:59.073Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "20240506125206_addEmailNotification.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240506125206_addEmailNotification.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240506125206_addEmailNotification.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240506125206_addEmailNotification.cs",
-              "RelativeToolTip": "Migrations\\20240506125206_addEmailNotification.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T12:52:06.144Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "AccountService.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\AccountService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\AccountService.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\AccountService.cs",
-              "RelativeToolTip": "Services\\Implementations\\AccountService.cs",
+              "DocumentIndex": 14,
+              "Title": "20240511171531_fixedReleation.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240511171531_fixedReleation.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240511171531_fixedReleation.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240511171531_fixedReleation.cs",
+              "RelativeToolTip": "Migrations\\20240511171531_fixedReleation.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T09:27:56.268Z"
+              "WhenOpened": "2024-05-11T17:15:31.353Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ProfileImageResponse.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Profile\\ProfileImageResponse.cs",
-              "RelativeDocumentMoniker": "Models\\Profile\\ProfileImageResponse.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Profile\\ProfileImageResponse.cs",
-              "RelativeToolTip": "Models\\Profile\\ProfileImageResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAArAAAA",
+              "DocumentIndex": 16,
+              "Title": "ProfileConfiguration.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Configuration\\ProfileConfiguration.cs",
+              "RelativeDocumentMoniker": "Dal\\Configuration\\ProfileConfiguration.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Configuration\\ProfileConfiguration.cs",
+              "RelativeToolTip": "Dal\\Configuration\\ProfileConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T13:33:09.99Z"
+              "WhenOpened": "2024-05-11T17:11:30.863Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "UpdateProfileRequest.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Profile\\UpdateProfileRequest.cs",
-              "RelativeDocumentMoniker": "Models\\Profile\\UpdateProfileRequest.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Profile\\UpdateProfileRequest.cs",
-              "RelativeToolTip": "Models\\Profile\\UpdateProfileRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAApAAAA",
+              "DocumentIndex": 17,
+              "Title": "20240511171109_AddFolovingGroupToProfile.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240511171109_AddFolovingGroupToProfile.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240511171109_AddFolovingGroupToProfile.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240511171109_AddFolovingGroupToProfile.cs",
+              "RelativeToolTip": "Migrations\\20240511171109_AddFolovingGroupToProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T15:33:23.22Z"
+              "WhenOpened": "2024-05-11T17:11:09.869Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "ResetPasswordResponse.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Profile\\ResetPasswordResponse.cs",
-              "RelativeDocumentMoniker": "Models\\Profile\\ResetPasswordResponse.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Profile\\ResetPasswordResponse.cs",
-              "RelativeToolTip": "Models\\Profile\\ResetPasswordResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAAmAAAA",
+              "DocumentIndex": 15,
+              "Title": "SheduleGroupConfiguration.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Configuration\\SheduleGroupConfiguration.cs",
+              "RelativeDocumentMoniker": "Dal\\Configuration\\SheduleGroupConfiguration.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Configuration\\SheduleGroupConfiguration.cs",
+              "RelativeToolTip": "Dal\\Configuration\\SheduleGroupConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBEAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T17:33:23.093Z"
+              "WhenOpened": "2024-05-09T17:52:24.525Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 19,
+              "Title": "ProfileService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\ProfileService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\ProfileService.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\ProfileService.cs",
+              "RelativeToolTip": "Services\\Implementations\\ProfileService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T13:50:28.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ProfileEntity.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Entities\\ProfileEntity.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\ProfileEntity.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Entities\\ProfileEntity.cs",
+              "RelativeToolTip": "Domain\\Entities\\ProfileEntity.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAUwBYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T17:19:28.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Dal\\Interfaces\\IUserRepository.cs",
@@ -599,247 +461,268 @@
               "RelativeToolTip": "Dal\\Interfaces\\IUserRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T23:33:50.706Z"
+              "WhenOpened": "2024-05-10T17:43:58.179Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "ResetPasswordConfirmeRequest.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Profile\\ResetPasswordConfirmeRequest.cs",
-              "RelativeDocumentMoniker": "Models\\Profile\\ResetPasswordConfirmeRequest.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Profile\\ResetPasswordConfirmeRequest.cs",
-              "RelativeToolTip": "Models\\Profile\\ResetPasswordConfirmeRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAMAAAAFAAAA",
+              "DocumentIndex": 23,
+              "Title": "FileController.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\FileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FileController.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\FileController.cs",
+              "RelativeToolTip": "Controllers\\FileController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T20:39:01.863Z"
+              "WhenOpened": "2024-05-09T18:20:50.303Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "ResetPasswordRequest.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Profile\\ResetPasswordRequest.cs",
-              "RelativeDocumentMoniker": "Models\\Profile\\ResetPasswordRequest.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Profile\\ResetPasswordRequest.cs",
-              "RelativeToolTip": "Models\\Profile\\ResetPasswordRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T15:59:54.111Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Implementations\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Dal\\Implementations\\UserRepository.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Implementations\\UserRepository.cs",
-              "RelativeToolTip": "Dal\\Implementations\\UserRepository.cs",
+              "DocumentIndex": 26,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "Controllers\\ProfileController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T13:51:15.521Z"
+              "WhenOpened": "2024-05-10T17:19:57.166Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "StatusCode.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Enums\\StatusCode.cs",
-              "RelativeDocumentMoniker": "Domain\\Enums\\StatusCode.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Enums\\StatusCode.cs",
-              "RelativeToolTip": "Domain\\Enums\\StatusCode.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAgAAAA",
+              "DocumentIndex": 21,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAAAEYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T21:46:15.226Z"
+              "WhenOpened": "2024-05-09T16:46:14.68Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 22,
               "Title": "IJwtProvider.cs",
               "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Interfaces\\IJwtProvider.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IJwtProvider.cs",
               "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Interfaces\\IJwtProvider.cs",
               "RelativeToolTip": "Services\\Interfaces\\IJwtProvider.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA9AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T17:58:35.467Z"
+              "WhenOpened": "2024-05-11T13:44:24.165Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "EmailAuth.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Email\\EmailAuth.cs",
-              "RelativeDocumentMoniker": "Models\\Email\\EmailAuth.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\Email\\EmailAuth.cs",
-              "RelativeToolTip": "Models\\Email\\EmailAuth.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T17:54:38.586Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "ProfileConfiguration.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Configuration\\ProfileConfiguration.cs",
-              "RelativeDocumentMoniker": "Dal\\Configuration\\ProfileConfiguration.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Configuration\\ProfileConfiguration.cs",
-              "RelativeToolTip": "Dal\\Configuration\\ProfileConfiguration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T15:11:23.697Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "UserConfiguration.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Configuration\\UserConfiguration.cs",
-              "RelativeDocumentMoniker": "Dal\\Configuration\\UserConfiguration.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Configuration\\UserConfiguration.cs",
-              "RelativeToolTip": "Dal\\Configuration\\UserConfiguration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T15:11:35.136Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "UserEntity.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Entities\\UserEntity.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\UserEntity.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Entities\\UserEntity.cs",
-              "RelativeToolTip": "Domain\\Entities\\UserEntity.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAmwBQAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T15:02:12.391Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Dal\\AppDbContext.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\AppDbContext.cs",
-              "RelativeToolTip": "Dal\\AppDbContext.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAuwBcAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T15:07:35.534Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 24,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T22:06:47.85Z"
+              "WhenOpened": "2024-05-09T16:46:40.806Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "ExcelFileEntity.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Entities\\ExcelFileEntity.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\ExcelFileEntity.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Domain\\Entities\\ExcelFileEntity.cs",
-              "RelativeToolTip": "Domain\\Entities\\ExcelFileEntity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAvAAAA",
+              "DocumentIndex": 31,
+              "Title": "SelectFileRequest.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\File\\SelectFileRequest.cs",
+              "RelativeDocumentMoniker": "Models\\File\\SelectFileRequest.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\File\\SelectFileRequest.cs",
+              "RelativeToolTip": "Models\\File\\SelectFileRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T21:29:51.05Z"
+              "WhenOpened": "2024-05-09T18:03:24.475Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "20240504224842_addFullNameToProfile.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240504224842_addFullNameToProfile.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240504224842_addFullNameToProfile.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240504224842_addFullNameToProfile.cs",
-              "RelativeToolTip": "Migrations\\20240504224842_addFullNameToProfile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAgAAAA",
+              "DocumentIndex": 28,
+              "Title": "ExcelFilerepository.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Implementations\\ExcelFilerepository.cs",
+              "RelativeDocumentMoniker": "Dal\\Implementations\\ExcelFilerepository.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Implementations\\ExcelFilerepository.cs",
+              "RelativeToolTip": "Dal\\Implementations\\ExcelFilerepository.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAuwDwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T22:48:43.092Z"
+              "WhenOpened": "2024-05-09T17:07:08.468Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "20240504174125_automaticInitialProfile.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240504174125_automaticInitialProfile.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240504174125_automaticInitialProfile.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240504174125_automaticInitialProfile.cs",
-              "RelativeToolTip": "Migrations\\20240504174125_automaticInitialProfile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 40,
+              "Title": "20240510122000_updateSheduleTable.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240510122000_updateSheduleTable.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240510122000_updateSheduleTable.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240510122000_updateSheduleTable.cs",
+              "RelativeToolTip": "Migrations\\20240510122000_updateSheduleTable.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T17:41:26.033Z"
+              "WhenOpened": "2024-05-10T12:20:00.8Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "20240504152939_correctRelationProfileUser.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240504152939_correctRelationProfileUser.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240504152939_correctRelationProfileUser.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240504152939_correctRelationProfileUser.cs",
-              "RelativeToolTip": "Migrations\\20240504152939_correctRelationProfileUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAkAAAA",
+              "DocumentIndex": 27,
+              "Title": "FileService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\FileService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\FileService.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\FileService.cs",
+              "RelativeToolTip": "Services\\Implementations\\FileService.cs",
+              "ViewState": "AQIAAPQAAAAAAAAAAAD4vwABAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T15:29:39.515Z"
+              "WhenOpened": "2024-05-09T17:07:00.866Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "20240504152510_addProfileEntity.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240504152510_addProfileEntity.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240504152510_addProfileEntity.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240504152510_addProfileEntity.cs",
-              "RelativeToolTip": "Migrations\\20240504152510_addProfileEntity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAaAAAA",
+              "DocumentIndex": 25,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAuwEgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T15:25:10.725Z"
+              "WhenOpened": "2024-05-09T18:33:36.53Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 30,
+              "Title": "IFileService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Interfaces\\IFileService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IFileService.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Interfaces\\IFileService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IFileService.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAuwBMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T18:01:47.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\EmailService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\EmailService.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Implementations\\EmailService.cs",
+              "RelativeToolTip": "Services\\Implementations\\EmailService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAuwBMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T11:43:57.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "SheduleDayOfWeekConfiguration.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Configuration\\SheduleDayOfWeekConfiguration.cs",
+              "RelativeDocumentMoniker": "Dal\\Configuration\\SheduleDayOfWeekConfiguration.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Configuration\\SheduleDayOfWeekConfiguration.cs",
+              "RelativeToolTip": "Dal\\Configuration\\SheduleDayOfWeekConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T17:52:34.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "SubjectConfiguration.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Configuration\\SubjectConfiguration.cs",
+              "RelativeDocumentMoniker": "Dal\\Configuration\\SubjectConfiguration.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Configuration\\SubjectConfiguration.cs",
+              "RelativeToolTip": "Dal\\Configuration\\SubjectConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T17:52:46.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "20240509180035_fixedNameShedule.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240509180035_fixedNameShedule.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240509180035_fixedNameShedule.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240509180035_fixedNameShedule.cs",
+              "RelativeToolTip": "Migrations\\20240509180035_fixedNameShedule.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T18:00:35.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
               "Title": "IExcelFileRepository.cs",
               "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Interfaces\\IExcelFileRepository.cs",
               "RelativeDocumentMoniker": "Dal\\Interfaces\\IExcelFileRepository.cs",
               "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\Interfaces\\IExcelFileRepository.cs",
               "RelativeToolTip": "Dal\\Interfaces\\IExcelFileRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T21:43:23.297Z"
+              "WhenOpened": "2024-05-09T18:48:40.908Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "DeleteFileRequest.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\File\\DeleteFileRequest.cs",
-              "RelativeDocumentMoniker": "Models\\File\\DeleteFileRequest.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\File\\DeleteFileRequest.cs",
-              "RelativeToolTip": "Models\\File\\DeleteFileRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAoAAAA",
+              "DocumentIndex": 33,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Dal\\AppDbContext.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Dal\\AppDbContext.cs",
+              "RelativeToolTip": "Dal\\AppDbContext.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA1wCIAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T14:51:18.089Z"
+              "WhenOpened": "2024-05-09T16:54:38.721Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "UpdateFileRequest.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\File\\UpdateFileRequest.cs",
-              "RelativeDocumentMoniker": "Models\\File\\UpdateFileRequest.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Models\\File\\UpdateFileRequest.cs",
-              "RelativeToolTip": "Models\\File\\UpdateFileRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAZAAAA",
+              "DocumentIndex": 39,
+              "Title": "20240509165613_AddSheduleEntity.cs",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240509165613_AddSheduleEntity.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240509165613_AddSheduleEntity.cs",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Migrations\\20240509165613_AddSheduleEntity.cs",
+              "RelativeToolTip": "Migrations\\20240509165613_AddSheduleEntity.cs",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T14:51:43.581Z"
+              "WhenOpened": "2024-05-09T16:56:14.113Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "IHomeService.cs",
-              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Interfaces\\IHomeService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IHomeService.cs",
-              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\Services\\Interfaces\\IHomeService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IHomeService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T14:52:47.011Z"
+              "DocumentIndex": 36,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-09T16:46:16.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "readme.txt",
+              "DocumentMoniker": "C:\\Users\\zelen\\.nuget\\packages\\epplus\\7.1.2\\readme.txt",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Users\\zelen\\.nuget\\packages\\epplus\\7.1.2\\readme.txt",
+              "ToolTip": "C:\\Users\\zelen\\.nuget\\packages\\epplus\\7.1.2\\readme.txt",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Users\\zelen\\.nuget\\packages\\epplus\\7.1.2\\readme.txt",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-05-09T16:45:59.125Z",
+              "EditorCaption": ""
             }
           ]
         }
