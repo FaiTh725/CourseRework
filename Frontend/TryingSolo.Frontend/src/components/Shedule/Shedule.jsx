@@ -10,10 +10,8 @@ import { useRef } from "react";
 
 import cross from "../../assets/Modal/cross.png"
 
-// при удалени группы из списка выбирать следующую или предудыщую если она есть
+
 const Shedule = () => {
-    const [week, setWeek] = useState(1);
-    const [dayOfWeek, setDayOfWeek] = useState();
 
     const [folovingGroup, setFolovingGroup] = useState([]);
     const [allGroup, setAllGroup] = useState([]);
@@ -23,7 +21,12 @@ const Shedule = () => {
     const [selectedAddedGroup, setSelectedAddedGroup] = useState();
     const [selectedSheduleGroup, setSelectedSheduleGroup] = useState();
 
-    const [shedule, setShedule] = useState({});
+    const [sheduleGroup, setSheduleGroup] = useState([]);
+    const [pickedShedule, setPickedShedule] = useState([]);
+
+    const currentDay = new Date();
+    const [selectedDayOfWeek, setSelectedDayOfWeek] = useState(currentDay.getDay() == 0 ? 1 : currentDay.getDay());
+    const [numberWeek, setNumberWeek] = useState(1);
 
     const addGroupError = useRef(null);
 
@@ -118,11 +121,11 @@ const Shedule = () => {
 
             console.log(response);
 
+            setFolovingGroup(response.data.data);
+
             if (response.data.data.length > 0) {
                 setSelectedSheduleGroup(response.data.data[0].id);
             }
-
-            setFolovingGroup(response.data.data);
         }
         catch (error) {
             if (error.request.status == 0) {
@@ -155,10 +158,15 @@ const Shedule = () => {
             if (response.data.statusCode != 0) {
                 console.log(response.data.description);
             }
+
+            console.log(response);
+
+            setSheduleGroup(response.data.data);
+
         }
         catch (error) {
             if (error.request.status == 0) {
-                await useRediresctionRefreshToken(() => { GetSheduleGroup(e, idGroup) },
+                await useRediresctionRefreshToken(() => { GetSheduleGroup(idGroup) },
                     setAuth,
                     navigate,
                     useUpdateToken,
@@ -190,8 +198,21 @@ const Shedule = () => {
 
             console.log(response);
 
+            const indexDeletedGroup = folovingGroup.indexOf(folovingGroup.find(x => x.id == deletedGroup));
+
             var newFolovingGroup = folovingGroup.filter(x => x.id != deletedGroup);
             setFolovingGroup(newFolovingGroup);
+
+            if (deletedGroup == selectedSheduleGroup) {
+                if (indexDeletedGroup != 0) {
+                    setSelectedSheduleGroup(newFolovingGroup[indexDeletedGroup - 1].id);
+                }
+                else {
+                    setSelectedSheduleGroup();
+                    setSheduleGroup([]);
+                    setPickedShedule([]);
+                }
+            }
         }
         catch (error) {
             if (error.request.status == 0) {
@@ -230,6 +251,7 @@ const Shedule = () => {
 
             console.log(response);
             setFolovingGroup(prev => [...prev, response.data.data]);
+            setSelectedSheduleGroup(response.data.data.id);
         }
         catch (error) {
             if (error.request.status == 0) {
@@ -243,11 +265,69 @@ const Shedule = () => {
     }
 
     useEffect(() => {
-        const fatchSheduleGroup = async () => {
-            await GetSheduleGroup(selectedSheduleGroup);
-        }
+        if (sheduleGroup.length > 0) {
+            setPickedShedule([]);
 
-        fatchSheduleGroup();
+            sheduleGroup[numberWeek - 1].weekShedules[selectedDayOfWeek - 1].subjectsDayOfWeek.forEach(subjectInfo => {
+                const subjectsData = subjectInfo.name.replace(" уппа ", " |  ");
+                const time = subjectInfo.time;
+                const splitName = subjectsData.split(" | ");
+                const id = subjectInfo.id;
+
+                var nameSubject = "";
+                var corpus = "";
+                var audience = "";
+                var teacher = "";
+
+                if (splitName.length != 1) {
+
+                    nameSubject = splitName[0];
+                    const splitExtentionName = splitName[1].split(" ");
+
+                    if (nameSubject.startsWith("Физическая")) {
+                        teacher = splitName[1]
+                    }
+                    else {
+                        corpus = splitExtentionName[splitExtentionName.length - 2];
+                        audience = splitExtentionName[splitExtentionName.length - 1];
+                        teacher = splitExtentionName.slice(0, splitExtentionName.length - 2).join(" ");
+                    }
+                }
+                else {
+                    if (splitName[0].startsWith("Физическая")) {
+                        nameSubject = splitName[0];
+                    }
+                    else {
+                        const splitExtentionName = splitName[0].split(" ");
+
+                        audience = splitExtentionName[splitExtentionName.length - 1];
+                        corpus = splitExtentionName[splitExtentionName.length - 2];
+                        nameSubject = splitExtentionName.slice(0, splitExtentionName.length - 2).join(" ");
+
+                    }
+                }
+                setPickedShedule(prev => [...prev,
+                {
+                    id: id,
+                    time: time,
+                    teacher: teacher,
+                    corpus: corpus.slice(2),
+                    audience: audience,
+                    nameSubject: nameSubject
+                }]);
+            });
+        }
+    }, [selectedDayOfWeek, numberWeek, sheduleGroup]);
+
+    useEffect(() => {
+        if (selectedSheduleGroup != null) {
+
+            const fatchSheduleGroup = async () => {
+                await GetSheduleGroup(selectedSheduleGroup);
+            }
+
+            fatchSheduleGroup();
+        }
     }, [selectedSheduleGroup]);
 
     useEffect(() => {
@@ -320,9 +400,9 @@ const Shedule = () => {
                                 var btn = document.getElementById(`${group.id} ${styles.deleteBtn}`);
                                 btn.style.display = "none"
                             }}>
-                            <li onClick={(e) => { setSelectedSheduleGroup(group.id) }} className={selectedSheduleGroup == group.id ? styles.folovGroupSelected : styles.folovGroup}
+                            <li className={selectedSheduleGroup == group.id ? styles.folovGroupSelected : styles.folovGroup}
                             >
-                                <p>{group.group}</p>
+                                <p onClick={() => { setSelectedSheduleGroup(group.id) }}>{group.group}</p>
                                 <button id={`${group.id} ${styles.deleteBtn}`} className={styles.deleteBtn}
                                     onClick={(e) => { DeleteFolovingGroup(e, group.id) }}>
                                     <img src={cross} alt="cross" height={14} />
@@ -334,72 +414,57 @@ const Shedule = () => {
                     ))}
                 </ul>
             </section>
-            <section className={styles.sheduleGroup}>
-                <div className={styles.optionShedule}>
-                    <div className={styles.nameGroup}>
-                        <p>Группа</p>
-                        <p>10702122</p>
+            {sheduleGroup.length > 0 && (
+                <section className={styles.sheduleGroup}>
+                    <div className={styles.optionShedule}>
+                        <div className={styles.nameGroup}>
+                            <p>Группа</p>
+                            <p>{sheduleGroup != null ? sheduleGroup[numberWeek - 1].name : ""}</p>
+                        </div>
+                        <div className={styles.numberWeek}>
+                            <button onClick={() => { setNumberWeek(1) }} className={numberWeek == 1 ? styles.btnRadioChecked : styles.btnRadio}>1 неделя</button>
+                            <button onClick={() => { setNumberWeek(2) }} className={numberWeek == 2 ? styles.btnRadioChecked : styles.btnRadio}>2 неделя</button>
+                        </div>
+
                     </div>
-                    <div className={styles.numberWeek}>
-                        <button className={styles.btnRadio}>1 неделя</button>
-                        <button className={styles.btnRadio}>2 неделя</button>
-                    </div>
+                    <ul className={styles.dayOfWeek}>
+                        <li onClick={() => { setSelectedDayOfWeek(1) }} className={selectedDayOfWeek == 1 ? styles.btnRadioDayOfWeeekChecked : styles.btnRadioDayOfWeeek}>Понедельник</li>
+                        <li onClick={() => { setSelectedDayOfWeek(2) }} className={selectedDayOfWeek == 2 ? styles.btnRadioDayOfWeeekChecked : styles.btnRadioDayOfWeeek}>Вторник</li>
+                        <li onClick={() => { setSelectedDayOfWeek(3) }} className={selectedDayOfWeek == 3 ? styles.btnRadioDayOfWeeekChecked : styles.btnRadioDayOfWeeek}>Среда</li>
+                        <li onClick={() => { setSelectedDayOfWeek(4) }} className={selectedDayOfWeek == 4 ? styles.btnRadioDayOfWeeekChecked : styles.btnRadioDayOfWeeek}>Четверг</li>
+                        <li onClick={() => { setSelectedDayOfWeek(5) }} className={selectedDayOfWeek == 5 ? styles.btnRadioDayOfWeeekChecked : styles.btnRadioDayOfWeeek}>Пятница</li>
+                        <li onClick={() => { setSelectedDayOfWeek(6) }} className={selectedDayOfWeek == 6 ? styles.btnRadioDayOfWeeekChecked : styles.btnRadioDayOfWeeek}>Суббота</li>
+                    </ul>
+                    <section className={styles.table}>
+                        {pickedShedule.length > 0 && (
+                            <table className={styles.tableShedule}>
+                                <thead className={styles.theadShedule}>
+                                    <tr>
+                                        <th className={styles.firstTHead}>Время</th>
+                                        <th>Предмет</th>
+                                        <th>Преподаватель</th>
+                                        <th>Корпус</th>
+                                        <th className={styles.lastTHead}>Аудитория</th>
+                                    </tr>
+                                </thead>
+                                <tbody className={styles.tbodyShedule}>
+                                    {pickedShedule.map(subject => (
+                                        <tr key={subject.id}>
+                                            <td>{subject.time}</td>
+                                            <td>{subject.nameSubject}</td>
+                                            <td>{subject.teacher}</td>
+                                            <td>{subject.audience}</td>
+                                            <td>{subject.corpus}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        )}
 
-                </div>
-                <ul className={styles.dayOfWeek}>
-                    <li className={styles.btnRadioDayOfWeeek}>Понедельник</li>
-                    <li className={styles.btnRadioDayOfWeeek}>Вторник</li>
-                    <li className={styles.btnRadioDayOfWeeek}>Среда</li>
-                    <li className={styles.btnRadioDayOfWeeek}>Четверг</li>
-                    <li className={styles.btnRadioDayOfWeeek}>Пятница</li>
-                    <li className={styles.btnRadioDayOfWeeek}>Суббота</li>
-                </ul>
-                <section className={styles.table}>
-
-                    <table className={styles.tableShedule}>
-                        <thead className={styles.theadShedule}>
-                            <tr>
-
-                                <th className={styles.firstTHead}>Время</th>
-                                <th>Предмет</th>
-                                <th>Преподаватель</th>
-                                <th>Корпус</th>
-                                <th className={styles.lastTHead}>Аудитория</th>
-                            </tr>
-                        </thead>
-                        <tbody className={styles.tbodyShedule}>
-                            <tr>
-                                <td>8:00</td>
-                                <td>Системный анализ и машинное моделирование</td>
-                                <td>ст пр Борисова</td>
-                                <td>8</td>
-                                <td>2П</td>
-                            </tr>
-                            <tr>
-                                <td>8:00</td>
-                                <td>Системный анализ и машинное моделирование</td>
-                                <td>ст пр Борисова</td>
-                                <td>8</td>
-                                <td>2П</td>
-                            </tr>
-                            <tr>
-                                <td>8:00</td>
-                                <td>Системный анализ и машинное моделирование</td>
-                                <td>ст пр Борисова</td>
-                                <td>8</td>
-                                <td>2П</td>
-                            </tr>
-                            <tr>
-                                <td>8:00</td>
-                                <td>Системный анализ и машинное моделирование</td>
-                                <td>ст пр Борисова</td>
-                                <td>8</td>
-                                <td>2П</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    </section>
                 </section>
-            </section>
+            )}
+
         </main>
     )
 }

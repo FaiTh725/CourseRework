@@ -67,7 +67,9 @@ namespace Shedule.Controllers
         [Authorize]
         public async Task<IActionResult> GetSheduleGroup(int idGroup)
         {
-            return null;
+            var response = await sheduleService.GetSheduleGroup(idGroup);
+
+            return new JsonResult(response);
         }
     }
 }

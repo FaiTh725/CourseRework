@@ -11,5 +11,7 @@ namespace Shedule.Dal.Interfaces
         public Task<IEnumerable<SheduleGroup>> GetAllShedule();
 
         public Task<SheduleGroup> GetSheduleById(int idShedule);
+
+        public Task<IEnumerable<SheduleGroup>> GetGroupSheduleById(int idGroup);
     }
 }

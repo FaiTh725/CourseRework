@@ -26,7 +26,7 @@
         public SheduleGroup SheduleGroup { get; set; }
 
 
-        public List<Subject> Subjects = new(); 
+        public List<Subject> Subjects { get; set; } = new(); 
     }
 
     public class Subject

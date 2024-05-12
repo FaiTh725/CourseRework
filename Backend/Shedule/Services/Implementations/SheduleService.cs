@@ -1,4 +1,5 @@
 ﻿using OfficeOpenXml;
+using Org.BouncyCastle.Crypto.Prng;
 using Shedule.Dal.Interfaces;
 using Shedule.Domain.Entities;
 using Shedule.Domain.Response;
@@ -210,7 +211,42 @@ namespace Shedule.Services.Implementations
 
         public async Task<BaseResponse<IEnumerable<GetSheduleGroupResponse>>> GetSheduleGroup(int idGroup)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var sheduleGroup = await sheduleRepository.GetGroupSheduleById(idGroup);
+
+                return new BaseResponse<IEnumerable<GetSheduleGroupResponse>>
+                {
+                    StatusCode = Domain.Enums.StatusCode.Ok,
+                    Description = "Получили полностью расписание всей группы",
+                    Data = sheduleGroup.Select(x => new GetSheduleGroupResponse
+                    {
+                        Id = x.Id,
+                        Name = x.Name,
+                        DayOfWeek = x.DayOfWeek,
+                        WeekShedules = x.WeekShedules.Select(y => new SheduleDayOfWeekResponse
+                        {
+                            DayOfWeek = y.DayOfWeek,
+                            Id = y.Id,
+                            SubjectsDayOfWeek = y.Subjects.Select(z => new SubjectResponse
+                            {
+                                Id = z.Id,
+                                Name = z.Name,
+                                Time = z.Time
+                            }).ToList()
+                        }).ToList()
+                    })
+                };
+            }
+            catch
+            {
+                return new BaseResponse<IEnumerable<GetSheduleGroupResponse>>
+                {
+                    Description = "Ошибка сервера",
+                    StatusCode = Domain.Enums.StatusCode.ServerError,
+                    Data = new List<GetSheduleGroupResponse>()
+                };
+            }
         }
 
         public async Task<bool> ParseExcelFileOfShedule(string selectedFileName)

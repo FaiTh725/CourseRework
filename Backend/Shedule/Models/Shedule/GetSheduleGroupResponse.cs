@@ -10,7 +10,7 @@ namespace Shedule.Models.Shedule
 
         public int DayOfWeek { get; set; }
 
-        public List<SheduleDayOfWeek> WeekShedules { get; set; } = new();
+        public List<SheduleDayOfWeekResponse> WeekShedules { get; set; } = new();
     }
 
     public class SheduleDayOfWeekResponse
@@ -19,7 +19,7 @@ namespace Shedule.Models.Shedule
 
         public DayOfWeek DayOfWeek { get; set; }
 
-        public List<Subject> Subjects = new();
+        public List<SubjectResponse> SubjectsDayOfWeek { get; set; } = new();
     }
 
     public class SubjectResponse

@@ -206,10 +206,22 @@ h2 {
 }
 
 .btnRadioDayOfWeeekChecked {
+    margin: 5px 10px;
+    padding: 5px 8px;
     border: 2px solid #40d67a;
     box-shadow: 0 0 5px #40d67a;
     background-color: #209E50;
     color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    display: inline-block;
+    transition: all .5s;
+}
+
+.btnRadioDayOfWeeekChecked:hover {
+    border: 2px solid #40d67a;
+    box-shadow: 0 0 5px #40d67a;
+    transform: translate(0,-8px);
 }
 
 .tableShedule

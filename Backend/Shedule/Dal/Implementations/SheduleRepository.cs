@@ -35,6 +35,17 @@ namespace Shedule.Dal.Implementations
             return await context.SheduleGroups.ToListAsync();
         }
 
+        public async Task<IEnumerable<SheduleGroup>> GetGroupSheduleById(int idGroup)
+        {
+            var shedule = await GetSheduleById(idGroup);
+
+            return await context.SheduleGroups
+                .Include(x => x.WeekShedules)
+                .ThenInclude(x => x.Subjects) 
+                .Where(x => x.Name == shedule.Name)
+                .ToListAsync();
+        }
+
         public async Task<SheduleGroup> GetSheduleById(int idShedule)
         {
             return await context.SheduleGroups.FirstOrDefaultAsync(x => x.Id == idShedule);
