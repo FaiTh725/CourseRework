@@ -8,6 +8,9 @@ import logo from "../../assets/Auth/logo.png"
 import miniProfile from "../../assets/Auth/user.png"
 import { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Files from "../Files/Files";
+import Roles from "../Roles/Roles";
+import Shedule from "../Shedule/Shedule";
 
 // добавить функцию выбрать избранымм
 // при вводе пароля скрывать его и раскрывать
@@ -22,6 +25,7 @@ const Home = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef(null);
     const navigate = useNavigate();
+    const [tab, setTab] = useState();
 
     const handleClickOutside = (event) => {
         if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -71,8 +75,9 @@ const Home = () => {
                 </div>
                 <nav className={styles.navigate}>
                     <ul>
-                        {auth.role == "Methadist" || auth.role == "Admin"? <li><a href="#">файлы</a></li> : null}
-                        {auth.role == "Admin"? <li><a href="#">роли</a></li> : null}
+                        {auth.role == "Methadist" || auth.role == "Admin"? <li onClick={() => {setTab(<Files/>)}}>файлы</li> : null}
+                        {auth.role == "Admin"? <li onClick={() => {setTab(<Roles/>)}}>роли</li> : null}
+                        <li onClick={() => {setTab(<Shedule/>)}}>расписание</li>
                     </ul>
                 </nav>
                 <div className={styles.profile}>
@@ -83,7 +88,7 @@ const Home = () => {
                 {isMenuOpen && (
                     <div className={styles.menu} ref={menuRef}>
                         <div className={styles.menuInner}>
-                            <a href="#">Профиль</a>
+                            <Link to="/Profile">Профиль</Link>
                             <button type="button" onClick={SignOut}>Выйти</button>
                         </div>
                     </div>
@@ -99,6 +104,9 @@ const Home = () => {
             <section className={styles.news}>
             </section>
         </main>
+        <section className={styles.tab}>
+            {tab}
+        </section>
     </div>
     )
 }

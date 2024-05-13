@@ -217,6 +217,9 @@ const Files = () => {
                 if (file.id === id) {
                     return { ...file, isSelected: !file.isSelected };
                 }
+                if (file.isSelected == true) {
+                    file.isSelected = false;
+                }
                 return file;
             });
 
@@ -296,7 +299,7 @@ const Files = () => {
             <main className={styles.main}>
                 <section className={styles.filesContainer}>
                     {viewFiles.map(file => (
-                        <File key={file.id} id={file.id} isSelected={file.isSelected} name={file.name}
+                        <File key={file.id} id={file.id} isSelected={file.isSelected} name={file.name.slice(0, file.name.length - 5)}
                             img={file.isSelected ? favoriteFill : favorite}
                             description={file.description} DeleteFile={DeleteFile}
                             ChangeDescription={ChangeDescriptionFile}

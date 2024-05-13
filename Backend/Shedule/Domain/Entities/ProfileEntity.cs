@@ -1,4 +1,7 @@
-﻿namespace Shedule.Domain.Entities
+﻿using Newtonsoft.Json;
+using System.Security;
+
+namespace Shedule.Domain.Entities
 {
     public class ProfileEntity
     {

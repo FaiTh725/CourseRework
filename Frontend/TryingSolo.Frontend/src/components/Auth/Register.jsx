@@ -93,11 +93,11 @@ const Register= ({SwithPage}) => {
                 </div>
                 <div className={styles.inputData}>
                     <label htmlFor="password">Password</label>
-                    <input onChange={(e) => {setRepeatPassword(e.target.value)}} type="text" id="password" placeholder="enter you password"/>
+                    <input onChange={(e) => {setRepeatPassword(e.target.value)}} type="password" id="password" placeholder="enter you password"/>
                 </div>
                 <div className={styles.inputData}>
                     <label htmlFor="repeatPassword">Repeat Password</label>
-                    <input onChange={(e) => {setPassword(e.target.value)}} type="text" id="repeatPassword" placeholder="repeat password"/>
+                    <input onChange={(e) => {setPassword(e.target.value)}} type="password" id="repeatPassword" placeholder="repeat password"/>
                     <label id="error"></label>
                 </div>
                 <div className={styles.btnContainer}>

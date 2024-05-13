@@ -1,5 +1,4 @@
 ﻿using OfficeOpenXml;
-using Org.BouncyCastle.Crypto.Prng;
 using Shedule.Dal.Interfaces;
 using Shedule.Domain.Entities;
 using Shedule.Domain.Response;
@@ -13,14 +12,17 @@ namespace Shedule.Services.Implementations
         private readonly ISheduleRepository sheduleRepository;
         private readonly IWebHostEnvironment environment;
         private readonly IProfileRepository profileRepository;
+        private readonly ICacheService cacheService;
 
         public SheduleService(ISheduleRepository sheduleRepository,
             IWebHostEnvironment environment,
-            IProfileRepository profileRepository)
+            IProfileRepository profileRepository,
+            ICacheService cacheService)
         {
             this.sheduleRepository = sheduleRepository;
             this.environment = environment;
             this.profileRepository = profileRepository;
+            this.cacheService = cacheService;
         }
 
         public async Task<BaseResponse<GroupsResponse>> AddFolovingGroup(FolovingGroupRequest request)
@@ -31,7 +33,7 @@ namespace Shedule.Services.Implementations
                 var shedule = await sheduleRepository.GetSheduleById(request.IdShedule);
 
 
-                if(profile == null || shedule == null)
+                if (profile == null || shedule == null)
                 {
                     return new BaseResponse<GroupsResponse>
                     {
@@ -41,7 +43,7 @@ namespace Shedule.Services.Implementations
                     };
                 }
 
-                if(profile.FolovingGroup.FirstOrDefault(x => x.Id == shedule.Id) != null)
+                if (profile.FolovingGroup.FirstOrDefault(x => x.Id == shedule.Id) != null)
                 {
                     return new BaseResponse<GroupsResponse>
                     {
@@ -52,12 +54,13 @@ namespace Shedule.Services.Implementations
                 }
 
                 var newFolovingShedule = await profileRepository.AddFolovingGroup(profile.Id, shedule);
+                await cacheService.RemoveData<ProfileEntity>($"profile - {request.IdProfile}");
 
-                return new BaseResponse<GroupsResponse> 
-                { 
+                return new BaseResponse<GroupsResponse>
+                {
                     Description = "Добавили группу",
                     StatusCode = Domain.Enums.StatusCode.Ok,
-                    Data =  new GroupsResponse
+                    Data = new GroupsResponse
                     {
                         Id = newFolovingShedule.Id,
                         Group = int.Parse(newFolovingShedule.Name.Split(" ", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)[1])
@@ -83,7 +86,7 @@ namespace Shedule.Services.Implementations
                 var profile = await profileRepository.GetPorofileById(request.IdProfile);
                 var shedule = await sheduleRepository.GetSheduleById(request.IdShedule);
 
-                if(profile == null || shedule == null)
+                if (profile == null || shedule == null)
                 {
                     return new DataResponse
                     {
@@ -93,6 +96,7 @@ namespace Shedule.Services.Implementations
                 }
 
                 await profileRepository.DeleteFolovingGroup(profile.Id, shedule);
+                await cacheService.RemoveData<ProfileEntity>($"profile - {request.IdProfile}");
 
                 return new DataResponse
                 {
@@ -114,13 +118,22 @@ namespace Shedule.Services.Implementations
         {
             try
             {
-                var courses = (await sheduleRepository.GetAllShedule())
-                            .DistinctBy(x => x.Course)
-                            .Select(x => new CoursesResponse
-                            {
-                                Course = x.Course
-                            })
-                            .ToList();
+                var courses = await cacheService.GetData<List<CoursesResponse>>("courses");
+
+                if (courses == null)
+                {
+                    courses = (await sheduleRepository.GetAllShedule())
+                                     .DistinctBy(x => x.Course)
+                                     .Select(x => new CoursesResponse
+                                     {
+                                         Course = x.Course
+                                     })
+                                     .ToList();
+
+                    await cacheService.SetData("courses", courses, DateTimeOffset.Now.AddMinutes(5));
+                }
+
+
 
                 return new BaseResponse<IEnumerable<CoursesResponse>>
                 {
@@ -144,14 +157,22 @@ namespace Shedule.Services.Implementations
         {
             try
             {
-                var groups = (await sheduleRepository.GetAllShedule())
-                           .Where(x => x.DayOfWeek == 1 && x.Course == course)
-                           .Select(x => new GroupsResponse
-                           {
-                               Id = x.Id,
-                               Group = int.Parse(x.Name.Split(" ", StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries)[1]),
-                           })
-                           .ToList();
+                var groups = await cacheService.GetData<List<GroupsResponse>>($"groups - {course}");
+
+                if (groups == null)
+                {
+                    groups = (await sheduleRepository.GetAllShedule())
+                                   .Where(x => x.DayOfWeek == 1 && x.Course == course)
+                                   .Select(x => new GroupsResponse
+                                   {
+                                       Id = x.Id,
+                                       Group = int.Parse(x.Name.Split(" ", StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries)[1]),
+                                   })
+                                   .ToList();
+
+                    await cacheService.SetData($"group - {course}", groups, DateTimeOffset.Now.AddMinutes(5));
+                }
+
 
                 return new BaseResponse<IEnumerable<GroupsResponse>>
                 {
@@ -175,25 +196,33 @@ namespace Shedule.Services.Implementations
         {
             try
             {
-                var profile = await profileRepository.GetPorofileById(idProfile);
+                var profile = await cacheService.GetData<ProfileEntity>($"profile - {idProfile}");
 
-                if(profile == null)
+                if (profile == null)
                 {
-                    return new BaseResponse<IEnumerable<GroupsResponse>>
+                    profile = await profileRepository.GetPorofileById(idProfile);
+
+                    await cacheService.SetData($"profile - {idProfile}", profile, DateTimeOffset.Now.AddMinutes(5));
+
+                    if (profile == null)
                     {
-                        Description = "Профиль не найден",
-                        StatusCode = Domain.Enums.StatusCode.NotFountProfile,
-                        Data = new List<GroupsResponse>()
-                    };
+                        return new BaseResponse<IEnumerable<GroupsResponse>>
+                        {
+                            Description = "Профиль не найден",
+                            StatusCode = Domain.Enums.StatusCode.NotFountProfile,
+                            Data = new List<GroupsResponse>()
+                        };
+                    }
                 }
+
 
                 return new BaseResponse<IEnumerable<GroupsResponse>>
                 {
                     Description = "Получили отслеживаемые группы",
                     StatusCode = Domain.Enums.StatusCode.Ok,
-                    Data = profile.FolovingGroup.Select(x => new GroupsResponse 
-                    { 
-                        Id = x.Id, 
+                    Data = profile.FolovingGroup.Select(x => new GroupsResponse
+                    {
+                        Id = x.Id,
                         Group = int.Parse(x.Name.Split(" ", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)[1])
                     })
                 };
@@ -213,7 +242,13 @@ namespace Shedule.Services.Implementations
         {
             try
             {
-                var sheduleGroup = await sheduleRepository.GetGroupSheduleById(idGroup);
+                var sheduleGroup = await cacheService.GetData<IEnumerable<SheduleGroup>>($"SheduleGroup - {idGroup}");
+
+                if (sheduleGroup == null)
+                {
+                    sheduleGroup = await sheduleRepository.GetGroupSheduleById(idGroup);
+                    await cacheService.SetData($"SheduleGroup - {idGroup}", sheduleGroup, DateTimeOffset.Now.AddMinutes(5));
+                }
 
                 return new BaseResponse<IEnumerable<GetSheduleGroupResponse>>
                 {
@@ -258,7 +293,7 @@ namespace Shedule.Services.Implementations
             {
                 List<SheduleGroup> sheduleGroups = new();
                 // проход по страницам
-                foreach(var worksheet in package.Workbook.Worksheets)
+                foreach (var worksheet in package.Workbook.Worksheets)
                 {
                     int colCount = worksheet.Dimension.End.Column;
                     int colRow = worksheet.Dimension.End.Row;
@@ -270,9 +305,9 @@ namespace Shedule.Services.Implementations
                     try
                     {
                         // проход по группам
-                        for(int i=3; i<=colCount; i+=6)
+                        for (int i = 3; i <= colCount; i += 6)
                         {
-                            if (worksheet.Cells[2,i].Value is not null)
+                            if (worksheet.Cells[2, i].Value is not null)
                             {
                                 group.Add(new SheduleGroup
                                 {
@@ -285,9 +320,9 @@ namespace Shedule.Services.Implementations
 
                                 // Заполняем дни недели
                                 int intDayOfWeek = 1;
-                                for (int j=3; j<=colRow; j+=2)
+                                for (int j = 3; j <= colRow; j += 2)
                                 {
-                                    if (worksheet.Cells[j,1].Value is not null)
+                                    if (worksheet.Cells[j, 1].Value is not null)
                                     {
                                         // добавили название дней
                                         group[^1].WeekShedules.Add(new SheduleDayOfWeek
@@ -300,20 +335,20 @@ namespace Shedule.Services.Implementations
 
                                         // добавление время - предмет
 
-                                        for(int k = j;k<=colRow; k++)
+                                        for (int k = j; k <= colRow; k++)
                                         {
-                                            if (worksheet.Cells[k,1].Value is not null & k != j)
+                                            if (worksheet.Cells[k, 1].Value is not null & k != j)
                                             {
                                                 break;
                                             }
-                                            if (worksheet.Cells[k,i].Value != null)
+                                            if (worksheet.Cells[k, i].Value != null)
                                             {
-                                                if (worksheet.Cells[k,2].Value == null)
+                                                if (worksheet.Cells[k, 2].Value == null)
                                                 {
                                                     group[^1].WeekShedules[^1].Subjects.Add(new Subject()
                                                     {
                                                         Time = group[^1].WeekShedules[^1].Subjects[^1].Time,
-                                                        Name = worksheet.Cells[k,i].Value.ToString()!,  
+                                                        Name = worksheet.Cells[k, i].Value.ToString()!,
                                                     });
                                                 }
                                                 else

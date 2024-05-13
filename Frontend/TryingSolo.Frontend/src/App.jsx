@@ -25,16 +25,16 @@ function App() {
           <Route exact path='/Auth' element={<Auth/>}/>
           <Route exact path='*' element={<NotFoundPage/>}/>
           <Route exact path='/RoleError' element={<RoleInvalid />} />
-          {/* перенести файлы в раздел для методистов и админов */}
-          <Route exact path='/Files' element={<Files/>}/> 
-          <Route exact path='/Profile' element={<Profile/>}/>
-          <Route exact path='/Shedule' element= {<Shedule/>}/>
           <Route element={<ProtectedRoute/>}>
             <Route exact path='/Home' element={<Home/>}/>
+            <Route exact path='/Profile' element={<Profile/>}/>
+            <Route exact path='/Shedule' element= {<Shedule/>}/>
             <Route element={<RoleProtectedRoute role={["Admin"]}/>}>
               <Route exact path='/Roles' element={<Roles/>}/>
             </Route>
-            
+            <Route element={<RoleProtectedRoute role={["Admin", "Methodist"]}/>}>
+              <Route exact path='/Files' element={<Files/>}/> 
+            </Route>
           </Route>
         </Routes>
       </AuthProvider>

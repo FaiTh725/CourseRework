@@ -4,7 +4,9 @@
     color: #757373da;
     font-style: normal;
     font-size: 18px;
-    padding: 20px 50px;
+    min-width: 800px;
+    margin-top: 30px;
+    /* padding: 20px 50px; */
 }
 
 h2 {

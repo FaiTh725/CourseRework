@@ -1,4 +1,5 @@
 ﻿using Shedule.Dal.Interfaces;
+using Shedule.Domain.Entities;
 using Shedule.Domain.Response;
 using Shedule.Models.Porifle;
 using Shedule.Models.Profile;
@@ -17,23 +18,32 @@ namespace Shedule.Services.Implementations
         private readonly IEmailService emailService;
         private readonly IJwtProvider jwtProvider;
         private readonly IUserRepository userRepository;
+        private readonly ICacheService cacheService;
 
         public ProfileService(IProfileRepository profileRepository, 
             IEmailService emailService, 
             IJwtProvider jwtProvider,
-            IUserRepository userRepository)
+            IUserRepository userRepository,
+            ICacheService cacheService)
         {
             this.profileRepository = profileRepository;
             this.emailService = emailService;
             this.jwtProvider = jwtProvider;
             this.userRepository = userRepository;
+            this.cacheService = cacheService;
         }
 
         public async Task<BaseResponse<ProfileResponse>> GetProfile(int idProfile)
         {
             try
             {
-                var profile = await profileRepository.GetPorofileById(idProfile);
+                var profile = await cacheService.GetData<ProfileEntity>($"profile - {idProfile}");
+
+                if(profile == null)
+                {
+                    profile = await profileRepository.GetPorofileById(idProfile);
+                }
+
 
                 if(profile == null)
                 {
@@ -44,6 +54,8 @@ namespace Shedule.Services.Implementations
                         Data = new ProfileResponse()
                     };
                 }
+
+                await cacheService.SetData($"profile - {idProfile}", profile, DateTimeOffset.Now.AddMinutes(10));
 
                 return new BaseResponse<ProfileResponse>
                 {
@@ -89,6 +101,8 @@ namespace Shedule.Services.Implementations
 
                 profile.NotificationEmail = !profile.NotificationEmail;
                 await profileRepository.Update(profile.Id, profile);
+
+                await cacheService.SetData($"profile - {profile.Id}", profile, DateTimeOffset.Now.AddMinutes(10));
 
                 return new DataResponse
                 {
@@ -249,6 +263,8 @@ namespace Shedule.Services.Implementations
                     UserName = request?.FullName
                 });
 
+                await cacheService.SetData($"profile - {newProfile.Id}", newProfile, DateTimeOffset.Now.AddMinutes(10));
+
                 return new BaseResponse<ProfileResponse>
                 {
                     StatusCode = Domain.Enums.StatusCode.Ok,
@@ -308,6 +324,8 @@ namespace Shedule.Services.Implementations
                         profile.LogoImage = fileBytes;
                         await profileRepository.Update(profile.Id, profile);
                     }
+
+                    await cacheService.SetData($"profile - {profile.Id}", profile, DateTimeOffset.Now.AddMinutes(10));
                 }
 
                 return new DataResponse

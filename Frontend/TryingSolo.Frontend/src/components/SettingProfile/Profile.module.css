@@ -215,3 +215,19 @@ h1 {
     margin-left: 5px;
 }
 
+.backHomeBtn {
+    display: inline-flex;
+    align-items: center;
+    font-size: 23px;
+    background-color: #209E50;
+    padding: 5px 15px 5px 5px;
+    border-radius: 14px;
+    color: #fff;
+    transition: all .5s;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.backHomeBtn:hover {
+    transform: translate(-15px);
+}

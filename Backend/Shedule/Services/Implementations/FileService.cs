@@ -132,7 +132,10 @@ namespace Shedule.Services.Implementations
                 }
 
                 await excelFileRepository.DeleteExcelFile(file);
-                
+                if(file.IsSelected)
+                {
+                    await sheduleRepository.ClearSelectedShedule();
+                }
                 
                 return new DataResponse
                 {
@@ -193,9 +196,10 @@ namespace Shedule.Services.Implementations
                     {
                         selectedFile.IsSelected = false;
                         await excelFileRepository.Update(selectedFile.Id, selectedFile);
+                        await sheduleRepository.ClearSelectedShedule();
                     }
 
-                    await sheduleRepository.ClearSelectedShedule();
+                    //await sheduleRepository.ClearSelectedShedule();
 
                     await hubContext.Clients.All.SendAsync("ReceiveSheduleChanging", "Расписание обновилось");
 
@@ -225,6 +229,7 @@ namespace Shedule.Services.Implementations
                     if(oldSelectedFile is not null)
                     {
                         oldSelectedFile.IsSelected = false;
+                        await sheduleRepository.ClearSelectedShedule();
                         await excelFileRepository.Update(oldSelectedFile.Id, oldSelectedFile);
                     }
 

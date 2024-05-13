@@ -21,6 +21,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSignalR();
+//builder.Services.AddDistributedMemoryCache();
 
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -34,6 +35,7 @@ builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<IProfileService, ProfileService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<ISheduleService, SheduleService>();
+builder.Services.AddScoped<ICacheService, CacheService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {

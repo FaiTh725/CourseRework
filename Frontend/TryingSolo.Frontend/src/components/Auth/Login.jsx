@@ -71,7 +71,7 @@ const Login = ({SwithPage}) => {
                 </div>
                 <div className={styles.inputData}>
                     <label htmlFor="password">Password</label>
-                    <input onChange={(e) => {setPassword(e.target.value)}} type="text" id="password" placeholder="enter you password"/>
+                    <input onChange={(e) => {setPassword(e.target.value)}} type="password" id="password" placeholder="enter you password"/>
                     <label id="error"></label>
                 </div>
                 <div className={styles.btnContainer}>

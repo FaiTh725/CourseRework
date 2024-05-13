@@ -3,6 +3,8 @@ import Notitifcation from "./Notification";
 import PersonalData from "./PersonalData";
 import ResetPassword from "./ResetPassword";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import back from "../../assets/Profile/back.png"
 
 // в последнюю очередь сделать всплывающее окно
 const Profile = () => {
@@ -11,6 +13,10 @@ const Profile = () => {
     return (
 
         <main className={styles.main}>
+            <Link to="/Home" className={styles.backHomeBtn}>
+                <img src={back} alt="back to home" height={40}/>
+                <p>На главную</p>
+            </Link>
             <h1>Настройки</h1>
             <div className={styles.container}>
                 <div className={styles.tabs}>
