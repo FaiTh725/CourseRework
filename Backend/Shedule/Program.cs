@@ -6,6 +6,7 @@ using Shedule.Dal;
 using Shedule.Dal.Implementations;
 using Shedule.Dal.Interfaces;
 using Shedule.Hubs;
+using Shedule.MiddleWares;
 using Shedule.Models.Jwt;
 using Shedule.Services.Implementations;
 using Shedule.Services.Interfaces;
@@ -18,7 +19,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+//builder.Services.AddSwaggerGen();
 
 builder.Services.AddSignalR();
 //builder.Services.AddDistributedMemoryCache();
@@ -69,37 +70,35 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-/*builder.Services.AddSwaggerGen(setup =>
+builder.Services.AddSwaggerGen(c =>
 {
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Test01", Version = "v1" });
 
-    setup.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
-        BearerFormat = "JWT",
         Name = "Authorization",
-        In = ParameterLocation.Header,
         Type = SecuritySchemeType.ApiKey,
-        Scheme = "bearer",
-        Description = "Enter JWT token",
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Input you token"
     });
 
-    setup.AddSecurityRequirement(new OpenApiSecurityRequirement
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
-        { 
+        {
             new OpenApiSecurityScheme
             {
-                Name = "Bearer",
-                In = ParameterLocation.Header,
                 Reference = new OpenApiReference
                 {
-                    Id = "Bearer",
-                    Type = ReferenceType.SecurityScheme
-                }
-
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                },
             },
-            new List<string>()
+            new string[] { }
         }
     });
-});*/
+});
 
 var app = builder.Build();
 
@@ -113,6 +112,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseMiddleware<AddBearerHeaderMiddleWare>();
 app.UseAuthentication();
 app.UseAuthorization();
 
