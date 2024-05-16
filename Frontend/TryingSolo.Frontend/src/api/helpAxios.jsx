@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 
 const api = axios.create({
-    baseURL: "https://localhost:7214"
+    baseURL: "https://localhost:5001"
 });
 
 

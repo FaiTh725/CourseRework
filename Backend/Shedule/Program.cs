@@ -8,8 +8,10 @@ using Shedule.Dal.Interfaces;
 using Shedule.Hubs;
 using Shedule.MiddleWares;
 using Shedule.Models.Jwt;
+using Shedule.Services;
 using Shedule.Services.Implementations;
 using Shedule.Services.Interfaces;
+using StackExchange.Redis;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,19 +42,23 @@ builder.Services.AddScoped<ICacheService, CacheService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaulConnection"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DockerMssqlConnection"));
 });
+
+//var multiplexer = ConnectionMultiplexer.Connect("redisCache");
+//builder.Services.AddSingleton<IConnectionMultiplexer>(multiplexer);
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("Web", builder =>
     {
-        builder.WithOrigins("http://localhost:5173")
+        builder.WithOrigins("http://localhost:4000")
             .AllowCredentials()
             .AllowAnyMethod()
             .AllowAnyHeader();
     });
 });
+
 
 var jwtConfiguration = builder.Configuration.GetSection("JwtConfig").Get<JwtOptions>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -108,6 +114,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+//app.MigrationInitializing();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

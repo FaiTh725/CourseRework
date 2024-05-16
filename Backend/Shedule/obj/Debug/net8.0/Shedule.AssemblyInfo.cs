@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("72416b93-9615-4ad4-904f-f8289f6886ff")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Shedule")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa21bfb3bdf5cb5995e6eca7226361a7199af706")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ee3cb8a1157aecee343a57dcb3e7622eee5e0c0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Shedule")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Shedule")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

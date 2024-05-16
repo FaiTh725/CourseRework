@@ -1,15 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./Auth.module.css"
 import Login from "./Login"
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import api from "../../api/helpAxios";
 import useParseToken from "../../hooks/useParseToken";
+import AuthContext from "../Context/AuthProvider";
 
 const Register= ({SwithPage}) => {
     const [loginInput, setLogin] = useState("");
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
     const navigate = useNavigate();
+    const {auth, setAuth} = useContext(AuthContext);
 
     useEffect(() => {
         var error = document.getElementById("error");

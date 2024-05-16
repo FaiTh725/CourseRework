@@ -1,0 +1,54 @@
+version: '3.4'
+
+services:
+  backend:
+    image: ${DOCKER_REGISTRY-}shedule
+    build:
+      context: Shedule
+      dockerfile: Dockerfile
+    depends_on:
+      - redis
+      - mssql
+    links:
+      - redis 
+    ports:
+      - '5000:8080' 
+      - '5001:8081'
+    
+
+  client:
+    image: client
+    build:
+      context: ../Frontend/TryingSolo.Frontend
+      dockerfile: Dockerfile
+    ports:
+      - '4000:4000'
+  
+  redis:
+    container_name: redisCache
+    image: redis:latest
+    restart: always
+
+  mssql:
+    container_name: mssql-db
+    hostname: mssql-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: 'Y'
+      MSSQL_SA_PASSWORD: 'Admin@123'
+      MSSQL_DATA_DIR: /var/opt/mssql/data
+      MSSQL_PID: 'Developer' 
+      MSSQL_TCP_PORT: 1433
+    ports:
+      - '1400:1433'
+    volumes:
+      - ./data:/var/opt/mssql/data
+      - ./log:/var/opt/mssql/log
+      - ./secrets:/var/opt/mssql/secrets
+
+  # proxy:
+  #   image: nginx:mainline
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf
+  #   ports:
+  #     - '80:80'

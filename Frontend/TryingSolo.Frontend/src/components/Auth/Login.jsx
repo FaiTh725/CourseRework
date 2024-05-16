@@ -28,7 +28,7 @@ const Login = ({SwithPage}) => {
             password:password
         },
         {
-            withCredentials: true,    
+            withCredentials: true,  
         });
 
         console.log(response.data.description);
@@ -45,7 +45,7 @@ const Login = ({SwithPage}) => {
         setAuth({id, login, role});
         navigate('/Home');
         }
-        catch {
+        catch (error) {
             console.log(error);
         }
     }
