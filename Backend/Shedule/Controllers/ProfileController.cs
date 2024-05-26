@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Shedule.Models.Porifle;
 using Shedule.Models.Profile;
+using Shedule.Services.Implementations;
 using Shedule.Services.Interfaces;
 
 namespace Shedule.Controllers
@@ -40,6 +41,15 @@ namespace Shedule.Controllers
         public async Task<IActionResult> GetProfile(int idProfile)
         {
             var response = await profileService.GetProfile(idProfile);
+
+            return new JsonResult(response);
+        }
+
+        [HttpGet("[action]/{idProfile}")]
+        [Authorize]
+        public async Task<IActionResult> GetProfileImage(int idProfile)
+        {
+            var response = await profileService.GetOnlyProfileImage(idProfile);
 
             return new JsonResult(response);
         }

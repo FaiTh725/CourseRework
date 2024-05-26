@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\files\\Расписание ФИТР — копия.xlsx"
     },
     {
+      "Id": "C:\\VSProjects\\React\\TryingSolo1\\Backend\\Shedule\\wwwroot\\files\\Расписание ФИТР.xlsx",
+      "PackagePath": "staticwebassets\\files\\Расписание ФИТР.xlsx"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Shedule.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

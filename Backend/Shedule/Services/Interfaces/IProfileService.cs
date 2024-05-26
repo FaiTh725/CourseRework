@@ -12,6 +12,8 @@ namespace Shedule.Services.Interfaces
 
         Task<BaseResponse<ProfileResponse>> GetProfile(int idProfile);
 
+        Task<BaseResponse<ProfileImageResponse>> GetOnlyProfileImage(int idProfile);
+
         Task<DataResponse> ResetPassword(ResetPasswordRequest request);
 
         Task<DataResponse> ResetPasswordConfirm(ResetPasswordConfirmeRequest request, string token);

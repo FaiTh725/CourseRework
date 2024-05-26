@@ -23,7 +23,7 @@ namespace Shedule.Dal.Implementations
 
         public async Task<List<UserEntity>> GetAllUsers()
         {
-            return await context.Users.ToListAsync();
+            return await context.Users.Include(x => x.Profile).ToListAsync();
         }
 
         public async Task<UserEntity> GetById(int id)

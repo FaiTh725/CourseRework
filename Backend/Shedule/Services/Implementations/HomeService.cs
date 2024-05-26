@@ -31,16 +31,17 @@ namespace Shedule.Services.Implementations
                 {
                     return new BaseResponse<GetAllUsersResponse>()
                     {
-                        StatusCode = Domain.Enums.StatusCode.NotEnoughRight,
+                        StatusCode = StatusCode.NotEnoughRight,
                         Description = "Не достаточно прав",
                         Data = new GetAllUsersResponse()
                         {
-                            Users = new List<Domain.Entities.UserEntity>()
+                            Users = new List<UserView>()
                         }
                     };
                 }
 
                 var users = await userRepository.GetAllUsers();
+
 
                 return new BaseResponse<GetAllUsersResponse>()
                 {
@@ -48,7 +49,13 @@ namespace Shedule.Services.Implementations
                     Description = "Получили пользователей",
                     Data = new GetAllUsersResponse()
                     {
-                        Users = users,
+                        Users = users.Select(x => new UserView
+                        {
+                            Id = x.Id,
+                            ImageProfile = x.Profile.LogoImage == null ? string.Empty : Convert.ToBase64String(x.Profile.LogoImage),
+                            login = x.Login,
+                            Role = x.Role,
+                        }).ToList(),
                     }
                 };
             }
@@ -60,7 +67,7 @@ namespace Shedule.Services.Implementations
                     Description = "Ошибка сервера при получении пользователей",
                     Data = new GetAllUsersResponse()
                     {
-                        Users = new List<Domain.Entities.UserEntity>()
+                        Users = new List<UserView>()
                     }
                 };
             }

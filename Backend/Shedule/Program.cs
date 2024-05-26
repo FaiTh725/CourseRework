@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -24,7 +25,12 @@ builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen();
 
 builder.Services.AddSignalR();
-//builder.Services.AddDistributedMemoryCache();
+builder.Services.AddResponseCompression(option =>
+{
+    option.EnableForHttps = true;
+    option.Providers.Add<BrotliCompressionProvider>();
+    option.Providers.Add<GzipCompressionProvider>();
+});
 
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -43,6 +49,7 @@ builder.Services.AddScoped<ICacheService, CacheService>();
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DockerMssqlConnection"));
+    //options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"));
 });
 
 //var multiplexer = ConnectionMultiplexer.Connect("redisCache");
@@ -107,6 +114,8 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+
+app.UseResponseCompression();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

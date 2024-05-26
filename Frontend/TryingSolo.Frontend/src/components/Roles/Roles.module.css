@@ -85,3 +85,6 @@
     background-color: #e7e7e75e;
 }
 
+.imageContainer img{
+    border-radius: 50%;
+}

@@ -19,9 +19,11 @@ namespace Shedule.Dal.Implementations
 
         public async Task<ExcelFileEntity> AddFile(IFormFile file)
         {
-            string path = "/files/" + file.FileName;
+            //string path = environment.WebRootPath + "/files/" + file.FileName;
 
-            using (var fileStream = new FileStream(environment.WebRootPath+path, FileMode.Create))
+            string path = "/app/repository/files/" + file.FileName;
+
+            using (var fileStream = new FileStream(path, FileMode.Create))
             {
                 await file.CopyToAsync(fileStream);
             }
@@ -39,7 +41,7 @@ namespace Shedule.Dal.Implementations
 
         public async Task DeleteExcelFile(ExcelFileEntity excelFile)
         {
-            var filePath = environment.WebRootPath + excelFile.Path;
+            var filePath = /*environment.WebRootPath + */excelFile.Path;
 
             if (File.Exists(filePath))
             {

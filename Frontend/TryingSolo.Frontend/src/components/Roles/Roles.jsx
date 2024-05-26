@@ -129,8 +129,8 @@ const Roles = () => {
 const UserComponent = ({ user, ChangeUserRole }) => {
     return (
         <div className={styles.userVisual} key={user.id}>
-            <div>
-                <img src={miniProfile} alt="miniLogo" height={90} />
+            <div className={styles.imageContainer}>
+                <img src={user.imageProfile == "" ? miniProfile : `data:image/png;base64,${user.imageProfile}`} alt="miniLogo" height={90} width={90}/>
             </div>
             <div className={styles.info}>
                 <p>{user.id}</p>

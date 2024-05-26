@@ -12,6 +12,7 @@ namespace Shedule.Services.Implementations
         public CacheService(IConfiguration configuration)
         {
             var redis = ConnectionMultiplexer.Connect(configuration.GetConnectionString("RedisConnection"));
+            //var redis = ConnectionMultiplexer.Connect(configuration.GetConnectionString("RedisConnectionDefault"));
 
             this.cacheDb = redis.GetDatabase();
         }

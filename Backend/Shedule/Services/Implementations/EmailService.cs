@@ -21,7 +21,7 @@ namespace Shedule.Services.Implementations
 
             MimeMessage msg = new MimeMessage();
 
-            msg.From.Add(new MailboxAddress("Изменения в расписании", emailAuth.Login));
+            msg.From.Add(new MailboxAddress("Расписании", emailAuth.Login));
             msg.To.Add(new MailboxAddress("Перейдите по ссылке что бы ввести новый пароль", email));
 
             var bodyBuilder = new BodyBuilder();
@@ -49,7 +49,8 @@ namespace Shedule.Services.Implementations
             msg.Subject = subject;
 
             var bodyBuilder = new BodyBuilder();
-            bodyBuilder.HtmlBody = $@"<a href='http://localhost:5173/ResetPassword?token={message}'>ссылка<a/>";
+            //bodyBuilder.HtmlBody = $@"<a href='http://localhost:5173/ResetPassword?token={message}'>Изменить пароль<a/>";
+            bodyBuilder.HtmlBody = $@"<a href='http://localhost:4000/ResetPassword?token={message}'>Изменить пароль<a/>";
 
             msg.Body = bodyBuilder.ToMessageBody();
 

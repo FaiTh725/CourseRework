@@ -311,8 +311,8 @@ const Shedule = () => {
                     id: id,
                     time: time,
                     teacher: teacher,
-                    corpus: corpus.slice(2),
-                    audience: audience,
+                    corpus: corpus,
+                    audience: audience.slice(2),
                     nameSubject: nameSubject
                 }]);
             });

@@ -3,6 +3,7 @@ using Shedule.Dal.Interfaces;
 using Shedule.Domain.Response;
 using Shedule.Hubs;
 using Shedule.Models.File;
+using Shedule.Models.Shedule;
 using Shedule.Services.Interfaces;
 
 namespace Shedule.Services.Implementations
@@ -15,13 +16,15 @@ namespace Shedule.Services.Implementations
         private readonly IProfileRepository profileRepository;
         private readonly IEmailService emailService;
         private readonly ISheduleService sheduleService;
+        private readonly ICacheService cacheService;
 
         public FileService(IExcelFileRepository excelFileRepository, 
                 IHubContext<ReciveEmailHub> hubContext, 
                 IProfileRepository profileRepository,
                 IEmailService emailService,
                 ISheduleService sheduleService,
-                ISheduleRepository sheduleRepository)
+                ISheduleRepository sheduleRepository,
+                ICacheService cacheService)
         {
             this.excelFileRepository = excelFileRepository; 
             this.hubContext = hubContext;
@@ -29,6 +32,7 @@ namespace Shedule.Services.Implementations
             this.emailService = emailService;
             this.sheduleService = sheduleService;
             this.sheduleRepository = sheduleRepository;
+            this.cacheService = cacheService;
         }
 
         public async Task<BaseResponse<AddFileResponse>> AddFile(IFormFile file)
@@ -61,8 +65,9 @@ namespace Shedule.Services.Implementations
                     }
                 };
             }
-            catch
+            catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return new BaseResponse<AddFileResponse>
                 {
                     Description = "Ошибка сервера",
@@ -225,6 +230,8 @@ namespace Shedule.Services.Implementations
 
                 if (trySelectFile)
                 {
+                    await cacheService.RemoveData<List<CoursesResponse>>("courses");
+
                     var oldSelectedFile = await excelFileRepository.GetSelectedFile();
                     if(oldSelectedFile is not null)
                     {

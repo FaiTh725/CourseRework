@@ -133,8 +133,6 @@ namespace Shedule.Services.Implementations
                     await cacheService.SetData("courses", courses, DateTimeOffset.Now.AddMinutes(5));
                 }
 
-
-
                 return new BaseResponse<IEnumerable<CoursesResponse>>
                 {
                     Data = courses,

@@ -1,4 +1,5 @@
-﻿using Shedule.Dal.Interfaces;
+﻿using OfficeOpenXml.Utils;
+using Shedule.Dal.Interfaces;
 using Shedule.Domain.Entities;
 using Shedule.Domain.Response;
 using Shedule.Models.Porifle;
@@ -31,6 +32,44 @@ namespace Shedule.Services.Implementations
             this.jwtProvider = jwtProvider;
             this.userRepository = userRepository;
             this.cacheService = cacheService;
+        }
+
+        public async Task<BaseResponse<ProfileImageResponse>> GetOnlyProfileImage(int idProfile)
+        {
+            try
+            {
+                var profile = await profileRepository.GetPorofileById(idProfile);
+
+                if (profile == null) 
+                {
+                    return new BaseResponse<ProfileImageResponse>
+                    {
+                        StatusCode = Domain.Enums.StatusCode.NotFountProfile,
+                        Description = "Пользователь не найден",
+                        Data = new()
+                    };
+                }
+
+                return new BaseResponse<ProfileImageResponse>
+                {
+                    Description = "Получили аватарку пользователя",
+                    StatusCode = Domain.Enums.StatusCode.Ok,
+                    Data = new()
+                    {
+                        PorifleId = profile.Id,
+                        ImageName = profile.LogoImage == null ? string.Empty : Convert.ToBase64String(profile.LogoImage)
+                    }
+                };
+            }
+            catch
+            {
+                return new BaseResponse<ProfileImageResponse>
+                {
+                    Data = new ProfileImageResponse(),
+                    Description = "Ошибка сервера",
+                    StatusCode = Domain.Enums.StatusCode.ServerError
+                };
+            }
         }
 
         public async Task<BaseResponse<ProfileResponse>> GetProfile(int idProfile)

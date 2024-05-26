@@ -140,33 +140,9 @@ namespace Shedule.Services.Implementations
             {
                 var user = await userRepository.GetUserByRefreshToken(refreshToken);
 
-                /*if (user == null)
-                {
-                    return new BaseResponse<AccountResponse>
-                    {
-                        Description = "Не найден пользователь с такии токеном обновления",
-                        StatusCode = StatusCode.NotFoundUser,
-                        Data = new AccountResponse()
-                    };
-                }
-
-                // проверка времени токена
-                if (user.RefreshTokenTime < DateTime.UtcNow)
-                {
-                    return new BaseResponse<AccountResponse>
-                    {
-                        StatusCode = StatusCode.InvalidToken,
-                        Description = "Время жизки токена истекло",
-                        Data = new AccountResponse()
-                        {
-                            RefreshToken = refreshToken,
-                        }
-                    };
-                }*/
-
                 var tokens = jwtProvider.GenerateTocken(user);
                 user.RefreshToken = tokens.refreshToken;
-                
+
                 await userRepository.Update(user.Id, user);
 
                 return new BaseResponse<AccountResponse>
