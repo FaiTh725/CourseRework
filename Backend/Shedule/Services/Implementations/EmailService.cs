@@ -21,11 +21,16 @@ namespace Shedule.Services.Implementations
 
             MimeMessage msg = new MimeMessage();
 
-            msg.From.Add(new MailboxAddress("Расписании", emailAuth.Login));
+            msg.From.Add(new MailboxAddress("Расписании БНТУ", emailAuth.Login));
             msg.To.Add(new MailboxAddress("Перейдите по ссылке что бы ввести новый пароль", email));
 
             var bodyBuilder = new BodyBuilder();
-            bodyBuilder.HtmlBody = $@"<h1>В расписании произошли изменения перепроверьте его<h1/>";
+            bodyBuilder.HtmlBody = $@"<div style=""text-align:center; color: #9e9b9b; font-size: 20px"">
+                                        <h1 style=""margin-bottom: 20px; border-bottom: 1px solid #9e9b9b"">В расписание произошли изменения перепроверьте его</h1>
+                                        <div style=""display: flex; justify-content: center; align-items:center;text-align: center"">
+                                            <img style=""max-width: 800px"" src=""https://img.freepik.com/free-vector/usability-testing-concept-illustration_114360-1571.jpg?t=st=1716831695~exp=1716835295~hmac=0eb2497fdaa474455ba7bd6c29d151507eaa6d1fdc7455b299e3073fe89ecd85&w=826"" alt="""" />
+                                        </div>
+                                      </div>";
 
             msg.Body = bodyBuilder.ToMessageBody();
 

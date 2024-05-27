@@ -8,6 +8,7 @@ namespace Shedule.Services.Implementations
     public class CacheService : ICacheService
     {
         private readonly IDatabase cacheDb;
+        private readonly ConnectionMultiplexer connectionMultiplexer;
 
         public CacheService(IConfiguration configuration)
         {
@@ -15,6 +16,19 @@ namespace Shedule.Services.Implementations
             //var redis = ConnectionMultiplexer.Connect(configuration.GetConnectionString("RedisConnectionDefault"));
 
             this.cacheDb = redis.GetDatabase();
+            this.connectionMultiplexer = redis;
+        }
+
+        public async Task ClearCacheWithPrefix(string prefix)
+        {
+            var server = connectionMultiplexer.GetServer(cacheDb.Multiplexer.GetEndPoints()[0]);
+            var keys = server.Keys(pattern: $"{prefix}*");
+
+            foreach (var key in keys)
+            {
+                await cacheDb.KeyDeleteAsync(key);
+            }
+            throw new NotImplementedException();
         }
 
         public async Task<T> GetData<T>(string key)
@@ -34,6 +48,7 @@ namespace Shedule.Services.Implementations
             if (await cacheDb.KeyExistsAsync(key))
             {
                 await cacheDb.KeyDeleteAsync(key);
+
                 return true;
             }
 

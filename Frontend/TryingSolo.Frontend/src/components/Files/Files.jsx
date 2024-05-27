@@ -239,6 +239,20 @@ const Files = () => {
         }
     }
 
+    const SendEmailNotification = async () => {
+        const token = localStorage.getItem("token");
+
+        var sendEmailsResponse = await api.get("/File/SendEmailChangingShedule",
+            {
+                withCredentials: true,
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    'Authorization': `Bearer ${token}`
+                }
+            }
+        );
+    }
+
     useEffect(() => {
         var fatchData = async () => {
             await GetAllFiles();
@@ -248,10 +262,9 @@ const Files = () => {
         var lisener = async () => {
 
             const token = localStorage.getItem("token");
-            const { id, login, roles } = useParseToken(token);
 
             var connection = new HubConnectionBuilder()
-                .withUrl("https://localhost:7214/ReciveEmailMessage")
+                .withUrl("https://localhost:5001/ReciveEmailMessage")
                 .withAutomaticReconnect()
                 .build();
 
@@ -274,6 +287,14 @@ const Files = () => {
                 }
                 catch (error) {
                     console.log(error);
+                    if (error.request.status == 0) {
+                        await useRediresctionRefreshToken(() => { SendEmailNotification() },
+                            setAuth,
+                            navigate,
+                            useUpdateToken,
+                            useParseToken);
+                    }
+
                 }
             });
 

@@ -6,7 +6,7 @@ using System.Reflection.Metadata;
 
 namespace Shedule.Controllers
 {
-    // TODO #1 не возращать refreshtoken
+    
     [ApiController]
     [Route("[controller]")]
     public class AccountController : ControllerBase 

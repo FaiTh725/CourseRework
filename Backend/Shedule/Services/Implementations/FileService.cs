@@ -140,6 +140,10 @@ namespace Shedule.Services.Implementations
                 if(file.IsSelected)
                 {
                     await sheduleRepository.ClearSelectedShedule();
+                    await cacheService.RemoveData<List<CoursesResponse>>("courses");
+                    await cacheService.ClearCacheWithPrefix("SheduleGroup");
+                    await cacheService.ClearCacheWithPrefix("profile");
+                    await cacheService.ClearCacheWithPrefix("groups");
                 }
                 
                 return new DataResponse
@@ -205,6 +209,7 @@ namespace Shedule.Services.Implementations
                     }
 
                     //await sheduleRepository.ClearSelectedShedule();
+                    await cacheService.RemoveData<List<CoursesResponse>>("courses");
 
                     await hubContext.Clients.All.SendAsync("ReceiveSheduleChanging", "Расписание обновилось");
 
@@ -236,7 +241,7 @@ namespace Shedule.Services.Implementations
                     if(oldSelectedFile is not null)
                     {
                         oldSelectedFile.IsSelected = false;
-                        await sheduleRepository.ClearSelectedShedule();
+                        //await sheduleRepository.ClearSelectedShedule();
                         await excelFileRepository.Update(oldSelectedFile.Id, oldSelectedFile);
                     }
 

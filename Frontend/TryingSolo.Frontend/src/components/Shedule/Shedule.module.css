@@ -122,6 +122,15 @@ h2 {
     color: #fff;
 }
 
+.nothingImageContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.nothingImageContainer img{
+    max-width: 800px;
+    
+}
 
 .deleteBtn {
     background-color: transparent;

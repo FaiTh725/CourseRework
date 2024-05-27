@@ -7,5 +7,7 @@
         Task<bool> SetData<T>(string key, T value, DateTimeOffset expirationTime);
 
         Task<bool> RemoveData<T>(string key);
+
+        Task ClearCacheWithPrefix(string prefix);
     }
 }

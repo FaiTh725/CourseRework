@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 
 import cross from "../../assets/Modal/cross.png"
-
+import noShedule from "../../assets/Shedule/NothingShedule.svg"
 
 const Shedule = () => {
 
@@ -357,62 +357,89 @@ const Shedule = () => {
     return (
         <main className={styles.main}>
             <h2>Расписание</h2>
-            <section className={styles.addGroup}>
-                <div>
-                    <p>Группа</p>
-                </div>
-                <div className={styles.numberWeek}>
-                    {allCourses.map(course => (
-                        <button key={course.course}
-                            type="button"
-                            onClick={(e) => { setSelectedCourse(course.course); addGroupError.current.textContent = ""; }}
-                            className={selectedCourse == course.course ?
-                                `${styles.btnRadioChecked}` :
-                                styles.btnRadio}>{course.course} курс</button>
-                    ))}
-                </div>
-                <div className={styles.selectGroup}>
-                    <select onChange={e => { setSelectedAddedGroup(e.target.value); addGroupError.current.textContent = ""; }}>
-                        {allGroup.map(group => (
-                            <option key={group.id} value={group.id} className={styles.option}>{group.group}</option>
-                        ))}
-                    </select>
-                </div>
-                <div>
-                    <button onClick={async (e) => { AddFolovingGroup(e) }} className={styles.btn}>Добавить</button>
-                </div>
-                <div>
-                    <label className={styles.errorMessage} ref={addGroupError}></label>
-                </div>
-            </section>
+            {
+                allCourses.length == 0 && (
+                    <section className={styles.nothingGroupMessgae}>
+                        <p>Ждите расписание скоро будет ищем мать админа</p>
+                        <div className={styles.nothingImageContainer}>
+                            <img src={noShedule} alt="" />
+                        </div>
+                    </section>
+                )
+            }
+            {
+                allCourses.length > 0 && (
+                    <section className={styles.addGroup}>
+                        <div>
+                            <p>Группа</p>
+                        </div>
+                        <div className={styles.numberWeek}>
+                            {allCourses.map(course => (
+                                <button key={course.course}
+                                    type="button"
+                                    onClick={(e) => { setSelectedCourse(course.course); addGroupError.current.textContent = ""; }}
+                                    className={selectedCourse == course.course ?
+                                        `${styles.btnRadioChecked}` :
+                                        styles.btnRadio}>{course.course} курс</button>
+                            ))}
+                        </div>
+                        <div className={styles.selectGroup}>
+                            <select onChange={e => { setSelectedAddedGroup(e.target.value); addGroupError.current.textContent = ""; }}>
+                                {allGroup.map(group => (
+                                    <option key={group.id} value={group.id} className={styles.option}>{group.group}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div>
+                            <button onClick={async (e) => { AddFolovingGroup(e) }} className={styles.btn}>Добавить</button>
+                        </div>
+                        <div>
+                            <label className={styles.errorMessage} ref={addGroupError}></label>
+                        </div>
+                    </section>
+                )
+            }
+
             <section className={styles.folovingGroups}>
                 <div>
                     <p>Отслеживаемые группы</p>
                 </div>
-                <ul className={styles.folovingGroup}>
-                    {folovingGroup.map(group => (
-                        <div key={`group-div-${group.id}`} className={styles.gr}
-                            onMouseEnter={() => {
-                                var btn = document.getElementById(`${group.id} ${styles.deleteBtn}`);
-                                btn.style.display = "block"
-                            }}
-                            onMouseLeave={() => {
-                                var btn = document.getElementById(`${group.id} ${styles.deleteBtn}`);
-                                btn.style.display = "none"
-                            }}>
-                            <li className={selectedSheduleGroup == group.id ? styles.folovGroupSelected : styles.folovGroup}
-                            >
-                                <p onClick={() => { setSelectedSheduleGroup(group.id) }}>{group.group}</p>
-                                <button id={`${group.id} ${styles.deleteBtn}`} className={styles.deleteBtn}
-                                    onClick={(e) => { DeleteFolovingGroup(e, group.id) }}>
-                                    <img src={cross} alt="cross" height={14} />
-                                </button>
-                            </li>
+                {
+                    folovingGroup.length > 0 && (
+                        <ul className={styles.folovingGroup}>
+                            {folovingGroup.map(group => (
+                                <div key={`group-div-${group.id}`} className={styles.gr}
+                                    onMouseEnter={() => {
+                                        var btn = document.getElementById(`${group.id} ${styles.deleteBtn}`);
+                                        btn.style.display = "block"
+                                    }}
+                                    onMouseLeave={() => {
+                                        var btn = document.getElementById(`${group.id} ${styles.deleteBtn}`);
+                                        btn.style.display = "none"
+                                    }}>
+                                    <li className={selectedSheduleGroup == group.id ? styles.folovGroupSelected : styles.folovGroup}
+                                    >
+                                        <p onClick={() => { setSelectedSheduleGroup(group.id) }}>{group.group}</p>
+                                        <button id={`${group.id} ${styles.deleteBtn}`} className={styles.deleteBtn}
+                                            onClick={(e) => { DeleteFolovingGroup(e, group.id) }}>
+                                            <img src={cross} alt="cross" height={14} />
+                                        </button>
+                                    </li>
 
-                        </div>
+                                </div>
 
-                    ))}
-                </ul>
+                            ))}
+                        </ul>
+                    )
+                }
+                {
+                    folovingGroup.length == 0 && (
+                        <section className={styles.folovingGroup}>
+                            <p>У вас пока что нет отслеживаемых групп</p>
+                        </section>
+                    )
+                }
+
             </section>
             {sheduleGroup.length > 0 && (
                 <section className={styles.sheduleGroup}>
